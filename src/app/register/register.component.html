@@ -1,1 +1,66 @@
-<p>register works!</p>
+<div id="register-container">
+    <app-logo id="logo"></app-logo>
+
+    <form [formGroup]="registerForm" (submit)="onSubmit()">
+        <h2>Register</h2>
+
+        <label for="username">Username:</label>
+        <input type="text" 
+            name="username"
+            placeholder="Username"
+            id="username"
+            formControlName="username"
+            [ngClass]="{'input-invalid': isInputInvalid(username) || submitError}">
+
+        <span class="error-text"
+            *ngIf="isInputInvalid(username) || submitError">
+            Username shorter than 4 characters.</span>
+
+        <label for="password">Password:</label>
+        <input type="password"
+            name="password" 
+            placeholder="Password" 
+            id="password"
+            formControlName="password"
+            [ngClass]="{'input-invalid': isInputInvalid(password) || submitError}">
+
+        <span class="error-text"
+            *ngIf="isInputInvalid(password) || submitError">
+            Password not entered.</span>
+
+        <label for="repeat-password">Repeat password:</label>
+        <input type="password" 
+            name="repeat-password"
+            placeholder="Repeat password"
+            id="repeat-password" 
+            formControlName="repeatPassword"
+            [ngClass]="{'input-invalid': isInputInvalid(repeatPassword) || submitError || !passwordsMatch()}">
+        
+        <span class="error-text"
+            *ngIf="isInputInvalid(repeatPassword) || submitError || !passwordsMatch()">
+            Passwords do not match.</span>
+
+        <label for="email">Email:</label>
+        <input type="email" 
+            name="email"    
+            placeholder="email@mail.com"
+            id="email" 
+            formControlName="email"
+            [ngClass]="{'input-invalid': isInputInvalid(email) || submitError}">
+
+        <span class="error"
+            *ngIf="isInputInvalid(email) || submitError">
+            Email not valid.</span>
+
+        <div id="btn-container">
+            <button routerLink="/login" 
+                class="btn-yellow">Back to login</button>
+            <button type="submit" 
+                class="btn-green">Register</button>
+        </div>
+
+        <span class="error-text"
+            id="register-error-message" 
+            *ngIf="registerErrorMessage">{{registerErrorMessage}}</span>
+    </form>
+</div>

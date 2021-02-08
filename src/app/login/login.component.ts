@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     }
 
     onSubmit() {
-        if (this.username.invalid || this.password.invalid) {
+        if (this.loginForm.invalid) {
             this.submitError = true;
             this.loginErrorMessage = 'Plesase enter all required data.';
         } else {

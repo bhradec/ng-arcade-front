@@ -8,6 +8,12 @@
     max-width: 300px;
 }
 
+@media (max-width: 300px) {
+    #logo {
+        width: 100%;
+    }
+}
+
 h2 {
     text-align: center;
     margin-top: 0px;
@@ -17,11 +23,18 @@ form {
     display: flex;
     flex-direction: column;
     background-color: white;
-    min-width: 300px;
+    min-width: 350px;
     padding: 30px;
     border-radius: 10px;
-    margin-top: 100px;
+    margin-top: 25px;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 300px) {
+    form {
+        min-width: 100%;
+    }
 }
 
 label {

@@ -2,12 +2,12 @@
     <app-logo id="logo"></app-logo>
 
     <form [formGroup]="loginForm" (submit)="onSubmit()">
-        <h2 class="title">Login</h2>
+        <h2>Login</h2>
 
         <label for="username">Username:</label>
         <input type="text" 
-            placeholder="Username" 
-            name="username" 
+            name="username"
+            placeholder="Username"  
             id="username"
             formControlName="username"
             [ngClass]="{'input-invalid': isInputInvalid(username) || submitError}">
@@ -18,8 +18,8 @@
 
         <label for="password">Password:</label>
         <input type="password" 
-            placeholder="Password" 
-            name="password" 
+            name="password"
+            placeholder="Password"
             id="password"
             formControlName="password"
             [ngClass]="{'input-invalid': isInputInvalid(password) || submitError}">
