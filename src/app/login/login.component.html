@@ -1,0 +1,40 @@
+<div id="login-container">
+    <app-logo id="logo"></app-logo>
+
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+        <h2 class="title">Login</h2>
+
+        <label for="username">Username:</label>
+        <input type="text" 
+            placeholder="Username" 
+            name="username" 
+            id="username"
+            formControlName="username"
+            [ngClass]="{'input-invalid': isInputInvalid(username) || submitError}">
+
+        <span class="error-text" 
+            *ngIf="isInputInvalid(username) || submitError">
+            Username not entered.</span>
+
+        <label for="password">Password:</label>
+        <input type="password" 
+            placeholder="Password" 
+            name="password" 
+            id="password"
+            formControlName="password"
+            [ngClass]="{'input-invalid': isInputInvalid(password) || submitError}">
+
+        <span class="error-text" 
+            *ngIf="isInputInvalid(password) || submitError">
+            Password not entered.</span>
+
+        <div id="btn-container">
+            <button type="submit" class="btn-blue">Login</button>
+            <button type="button" class="btn-yellow" routerLink="/register">Register</button>
+        </div>
+
+        <span class="error-text"
+            id="login-error-message" 
+            *ngIf="loginErrorMessage">{{loginErrorMessage}}</span>
+    </form>
+</div>
