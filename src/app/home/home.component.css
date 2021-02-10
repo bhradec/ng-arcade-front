@@ -1,0 +1,22 @@
+#content {
+    /* Na ekranima većim ili jednakim 992px na lijevoj 
+    strani se nalazi vertikalna navigacija široka 300px 
+    tako da je potrebno main, header i footer koji sadrže 
+    sam sadržaj stranice pomaknuti za 300px u desno. */
+    margin-left: 300px;
+}
+
+@media (max-width: 991px) {
+    app-main-navigation {
+        /* Na ekranima manjim od 992px vertikalna navigacija
+        se sakriva. */
+        display: none;
+    }
+    
+    #content {
+        /* Na ekranima manjim od 992px vertikalna navigacija 
+        se prikazuje klikom na gumb te nije potrebno pomicati 
+        sadržaj stranice. */
+        margin-left: 0px;
+    }
+}

@@ -1,0 +1,39 @@
+nav {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 300px;
+    background-color: var(--white);
+    transition: transform 0.25s ease-in-out;
+    z-index: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+app-logo {
+    align-self: center;
+    width: 250px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    padding-top: 15px;
+}
+
+nav ul li {
+    text-decoration: none;
+}
+
+@media (max-width: 991px) {
+    /* Logo se ne prikazuje u side-navu na ekranima manjim od 992px. */
+    nav #logo {
+        display: none;
+    }
+}

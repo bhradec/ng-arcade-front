@@ -4,12 +4,12 @@
     align-items: center;
 }
 
-#logo {
+app-logo {
     max-width: 300px;
 }
 
 @media (max-width: 300px) {
-    #logo {
+    app-logo {
         width: 100%;
     }
 }
