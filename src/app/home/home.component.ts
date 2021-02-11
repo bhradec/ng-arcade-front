@@ -14,6 +14,7 @@ import { Breakpoints } from "../shared/enums/breakpoints";
 export class HomeComponent implements OnInit {
     isUserAuthenticated: boolean = false;
     authChangeSubscription: Subscription;
+    isMobile: boolean;
     displayMainNavigation: boolean;
     user: User;
 
@@ -36,14 +37,16 @@ export class HomeComponent implements OnInit {
         }
 
         this.breakpointObserver
-        .observe([`(min-width: ${Breakpoints.MEDIUM}px)`])
-        .subscribe((breakpointState: BreakpointState) => {
-            if (breakpointState.matches) {
-                this.displayMainNavigation = true;
-            } else {
-                this.displayMainNavigation = false;
-            }
-        });
+            .observe([`(min-width: ${Breakpoints.MEDIUM}px)`])
+            .subscribe((breakpointState: BreakpointState) => {
+                if (breakpointState.matches) {
+                    this.displayMainNavigation = true;
+                    this.isMobile = false;
+                } else {
+                    this.displayMainNavigation = false;
+                    this.isMobile = true;  
+                }
+            });
     }
 
     toggleMainNav() {

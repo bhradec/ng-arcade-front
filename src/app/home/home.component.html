@@ -1,6 +1,6 @@
 <app-main-navigation [user]="user" 
     *ngIf="displayMainNavigation"></app-main-navigation>
-<div id="content">
+<div id="content" [style.marginLeft.px]="isMobile ? 0 : 300">
     <app-secondary-navigation (displayMenuEvent)="toggleMainNav()"></app-secondary-navigation>
     <router-outlet></router-outlet>
 </div>

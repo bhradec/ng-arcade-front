@@ -10,22 +10,22 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
     {
-        path: 'login',
+        path: "login",
         component: LoginComponent
     },
     {
-        path: 'register',
+        path: "register",
         component: RegisterComponent
     },
     {
-        path: '',
+        path: "",
         component: HomeComponent,
         canActivate: [AuthGuard],
         children: [
-            { path: 'gameLibrary', component: GameLibraryComponent, canActivate: [AuthGuard] },
-            { path: 'userProfile', component: UserProfileComponent, canActivate: [AuthGuard] },
-            { path: 'gameProfile', component: GameProfileComponent, canActivate: [AuthGuard] },
-            { path: 'gameAuthorProfile', component: GameProfileComponent, canActivate: [AuthGuard] }
+            { path: "", component: GameLibraryComponent, canActivate: [AuthGuard] },
+            { path: "userProfile", component: UserProfileComponent, canActivate: [AuthGuard] },
+            { path: "gameProfile", component: GameProfileComponent, canActivate: [AuthGuard] },
+            { path: "gameAuthorProfile", component: GameProfileComponent, canActivate: [AuthGuard] }
         ]
     }
 ];
