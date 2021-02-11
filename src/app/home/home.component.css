@@ -7,13 +7,7 @@
 }
 
 @media (max-width: 991px) {
-    app-main-navigation {
-        /* Na ekranima manjim od 992px vertikalna navigacija
-        se sakriva. */
-        display: none;
-    }
-    
-    #content {
+     #content {
         /* Na ekranima manjim od 992px vertikalna navigacija 
         se prikazuje klikom na gumb te nije potrebno pomicati 
         sadržaj stranice. */

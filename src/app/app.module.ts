@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './shared/other/auth-guard';
 import { LogoComponent } from './logo/logo.component';
+import { SecondaryNavigationComponent } from './secondary-navigation/secondary-navigation.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { LogoComponent } from './logo/logo.component';
         GameAuthorProfileComponent,
         GameLibraryComponent,
         MainNavigationComponent,
-        LogoComponent
+        LogoComponent,
+        SecondaryNavigationComponent
     ],
     imports: [
         BrowserModule,

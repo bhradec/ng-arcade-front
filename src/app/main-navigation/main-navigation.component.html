@@ -1,16 +1,21 @@
 <nav>
     <app-logo></app-logo>
+    <div class="separator"></div>
+    <ul id="userData">
+        <span>Current user: {{user.username}}</span>
+        <li>
+            <button class="btn-red" 
+                id="logout-button" 
+                (click)="logout()">Logout</button>
+        </li>
+    </ul>
+    <div class="separator"></div>
     <ul>
         <li>
             <a routerLink="/gameLibrary">Game library</a>
         </li>
         <li>
             <a routerLink="/userProfile">Profile</a>
-        </li>
-        <li>
-            <button class="btn-red" 
-                id="logout-button" 
-                (click)="logout()">Logout</button>
         </li>
     </ul>
 </nav>

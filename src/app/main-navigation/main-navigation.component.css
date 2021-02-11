@@ -19,13 +19,6 @@ app-logo {
     width: 250px;
 }
 
-@media (max-width: 991px) {
-    /* Logo se ne prikazuje u side-navu na ekranima manjim od 992px. */
-    app-logo {
-        display: none;
-    }
-}
-
 nav ul {
     list-style-type: none;
 }
@@ -40,5 +33,10 @@ nav ul li {
 
 #logout-button {
     margin-left: 0px;
-    margin-top: 20px;
+}
+
+.separator {
+    height: 1px;
+    width: 100%;
+    background-color: var(--grey);
 }

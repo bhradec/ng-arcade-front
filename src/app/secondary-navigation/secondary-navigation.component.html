@@ -1,0 +1,9 @@
+<nav>
+    <app-logo *ngIf="displayLogo"></app-logo>
+    <div id="buttons">
+        <button *ngIf="displayMenuButton" 
+            (click)="toggleMenu()">
+            <img src="../../assets/icons/menu.svg" alt="menu">
+        </button>
+    </div>
+</nav>

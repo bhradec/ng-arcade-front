@@ -1,4 +1,6 @@
-<app-main-navigation></app-main-navigation>
+<app-main-navigation [user]="user" 
+    *ngIf="displayMainNavigation"></app-main-navigation>
 <div id="content">
+    <app-secondary-navigation (displayMenuEvent)="toggleMainNav()"></app-secondary-navigation>
     <router-outlet></router-outlet>
 </div>
