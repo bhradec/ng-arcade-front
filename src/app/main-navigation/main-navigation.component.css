@@ -24,7 +24,8 @@ nav ul {
 }
 
 nav ul li {
-    padding-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 nav ul li {
@@ -39,4 +40,6 @@ nav ul li {
     height: 1px;
     width: 100%;
     background-color: var(--grey);
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
