@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../shared/models/user.model';
 import { AuthService } from '../shared/services/auth.service';
+import { UserLevels } from '../shared/enums/user-levels';
 
 @Component({
     selector: 'app-main-navigation',
@@ -8,6 +9,8 @@ import { AuthService } from '../shared/services/auth.service';
     styleUrls: ['./main-navigation.component.css']
 })
 export class MainNavigationComponent implements OnInit {
+    userLevels = UserLevels;
+    
     @Input() user: User;
     
     constructor(private authService: AuthService) { }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Breakpoints } from "../shared/other/breakpoints";
+import { Breakpoints } from "../shared/enums/breakpoints";
+import { UserLevels } from "../shared/enums/user-levels";
 
 @Component({
     selector: 'app-secondary-navigation',
@@ -10,6 +11,7 @@ import { Breakpoints } from "../shared/other/breakpoints";
 export class SecondaryNavigationComponent implements OnInit {
     displayMenuButton: boolean;
     displayLogo: boolean;
+    
     @Output() displayMenuEvent = new EventEmitter();
 
     constructor(private breakpointObserver: BreakpointObserver) { }

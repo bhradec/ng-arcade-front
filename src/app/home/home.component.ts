@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { User } from '../shared/models/user.model';
 import { AuthService } from '../shared/services/auth.service';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Breakpoints } from "../shared/other/breakpoints";
+import { Breakpoints } from "../shared/enums/breakpoints";
 
 @Component({
     selector: 'app-home',
