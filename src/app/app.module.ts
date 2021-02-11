@@ -18,6 +18,8 @@ import { LogoComponent } from './logo/logo.component';
 import { SecondaryNavigationComponent } from './secondary-navigation/secondary-navigation.component';
 import { GameTileComponent } from './game-tile/game-tile.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { AddGameComponent } from './add-game/add-game.component';
+import { EditGameComponent } from './edit-game/edit-game.component';
 
 @NgModule({
     declarations: [
@@ -33,7 +35,9 @@ import { AdministrationComponent } from './administration/administration.compone
         LogoComponent,
         SecondaryNavigationComponent,
         GameTileComponent,
-        AdministrationComponent
+        AdministrationComponent,
+        AddGameComponent,
+        EditGameComponent
     ],
     imports: [
         BrowserModule,

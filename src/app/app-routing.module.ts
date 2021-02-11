@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddGameComponent } from './add-game/add-game.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { EditGameComponent } from './edit-game/edit-game.component';
 import { GameLibraryComponent } from './game-library/game-library.component';
 import { GameProfileComponent } from './game-profile/game-profile.component';
 import { HomeComponent } from './home/home.component';
@@ -28,7 +30,9 @@ const routes: Routes = [
             { path: "userProfile", component: UserProfileComponent, canActivate: [AuthGuard] },
             { path: "gameProfile", component: GameProfileComponent, canActivate: [AuthGuard] },
             { path: "gameAuthorProfile", component: GameProfileComponent, canActivate: [AuthGuard] },
-            { path: "administration", component: AdministrationComponent, canActivate: [AuthGuard, AdminGuard]}
+            { path: "administration", component: AdministrationComponent, canActivate: [AuthGuard, AdminGuard] },
+            { path: "addGame", component: AddGameComponent, canActivate: [AuthGuard, AdminGuard] },
+            { path: "editGame", component: EditGameComponent, canActivate: [AuthGuard, AdminGuard] }
         ]
     }
 ];
