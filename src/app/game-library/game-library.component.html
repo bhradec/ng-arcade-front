@@ -1,1 +1,3 @@
-<p>game-library works!</p>
+<div class="container" *ngFor="let game of games">
+    <app-game-tile [game]="game"></app-game-tile>
+</div>

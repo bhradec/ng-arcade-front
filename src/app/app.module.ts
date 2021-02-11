@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -14,8 +13,11 @@ import { MainNavigationComponent } from './main-navigation/main-navigation.compo
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './shared/other/auth-guard';
+import { AdminGuard } from './shared/other/admin-guard';
 import { LogoComponent } from './logo/logo.component';
 import { SecondaryNavigationComponent } from './secondary-navigation/secondary-navigation.component';
+import { GameTileComponent } from './game-tile/game-tile.component';
+import { AdministrationComponent } from './administration/administration.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +31,9 @@ import { SecondaryNavigationComponent } from './secondary-navigation/secondary-n
         GameLibraryComponent,
         MainNavigationComponent,
         LogoComponent,
-        SecondaryNavigationComponent
+        SecondaryNavigationComponent,
+        GameTileComponent,
+        AdministrationComponent
     ],
     imports: [
         BrowserModule,
@@ -37,7 +41,7 @@ import { SecondaryNavigationComponent } from './secondary-navigation/secondary-n
         HttpClientModule,
         ReactiveFormsModule
     ],
-    providers: [AuthGuard],
+    providers: [AuthGuard, AdminGuard],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

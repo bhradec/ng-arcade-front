@@ -1,0 +1,14 @@
+.container {
+    background-color: tomato;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+app-game-tile {
+    box-sizing: border-box;
+    background-color: turquoise;
+    flex-basis: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+}

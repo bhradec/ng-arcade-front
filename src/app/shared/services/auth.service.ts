@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { DataService } from './data.service';
 import { User } from '../models/user.model';
+import { UserLevels } from '../enums/user-levels';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -48,5 +49,9 @@ export class AuthService {
 
     isAuthenticated() {
         return this.user != null;
+    }
+
+    isAdmin() {
+        return this.user.level == UserLevels.ADMIN;
     }
 }
