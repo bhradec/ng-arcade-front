@@ -6,9 +6,9 @@
     --blue: rgb(26, 166, 183);
     --yellow: rgb(255, 200, 92);
     --latte: rgb(248, 241, 241);
-    --grey: rgb(206, 212, 218);
-    --lightGrey: hsl(210, 16%, 97%);
-    --darkGrey: rgb(22, 22, 29);
+    --grey: rgb(216, 212, 200);
+    --lightGrey: rgb(136, 133, 125);
+    --darkGrey: rgb(29, 29, 22);
     --white: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
 
@@ -16,7 +16,7 @@
     --transparentGreen: rgba(3, 196, 161, 0.3);
     --transparentBlue: rgba(26, 166, 183, 0.3);
     --transparentYellow: rgba(255, 200, 92, 0.3);
-    --transparentGrey: rgba(206, 212, 218, 0.3);
+    --transparentGrey: rgba(216, 212, 200, 0.3);
 }
 
 body {
@@ -37,8 +37,6 @@ body, input, textarea, button {
     box-sizing: border-box;
     margin-right: auto;
     margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
     max-width: 1140px
 }
 
@@ -79,73 +77,36 @@ button:hover {
     transform: scale(1.1);
 }
 
-.btn-red {
+.button-red {
     background-color: var(--red);
 }
 
-.btn-green {
+.button-green {
     background-color: var(--green);
 }
 
-.btn-green:focus {
+.button-green:focus {
     box-shadow: var(--transparentGreen) 0px 0px 0px 3px;
 }
 
-.btn-blue {
+.button-blue {
     background-color: var(--blue);
 }
 
-.btn-blue:focus {
+.button-blue:focus {
     box-shadow: var(--transparentBlue) 0px 0px 0px 3px;
 }
 
-.btn-yellow {
+.button-yellow {
     background-color: var(--yellow);
 }
 
-.btn-yellow:focus {
+.button-yellow:focus {
     box-shadow: var(--transparentYellow) 0px 0px 0px 3px;
 }
 
 .error-text {
     color: var(--red);
-}
-
-/* Tipografija. */
-
-h1 {
-    font-size: 3.025rem;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-h2 {
-    font-size: 2.441rem;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-h3 {
-    font-size: 1.953rem;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-h4 {
-    font-weight: 900;
-    font-size: 1.563rem;
-    font-weight: bold;
-}
-
-h5 {
-    font-weight: 900;
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-p, span, a, input, textarea, button {
-    font-size: 1rem;
-    font-family: 'Raleway', sans-serif;
 }
 
 /* Poveznice. */

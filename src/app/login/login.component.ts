@@ -30,8 +30,7 @@ export class LoginComponent implements OnInit {
         this.authErrorSubscription = this.authService.authErrorSubject
             .subscribe((res: string) => {
                 this.loginErrorMessage = res;
-            }
-        );
+            });
     }
 
     get username() {

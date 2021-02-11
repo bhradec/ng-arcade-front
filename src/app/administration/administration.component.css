@@ -1,0 +1,26 @@
+.container {
+    margin-top: 55px;
+}
+
+#games-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+app-game-tile {
+    box-sizing: border-box;
+    flex-basis: 25%;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+

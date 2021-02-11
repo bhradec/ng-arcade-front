@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Game } from '../shared/models/game.model';
+import { GameService } from '../shared/services/game.service';
 
 @Component({
     selector: 'app-game-tile',
@@ -8,7 +9,12 @@ import { Game } from '../shared/models/game.model';
 })
 export class GameTileComponent implements OnInit {
     @Input() game: Game;
+    @Input() editMode: boolean;
 
-    constructor() { }
+    constructor(private gameService: GameService) { }
     ngOnInit() { }
+
+    deleteGame(id) {
+        this.gameService.deleteGame(id);
+    }
 }

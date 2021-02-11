@@ -44,10 +44,6 @@ export class GameLibraryComponent implements OnInit {
             });
     }
 
-    logout() {
-        this.authService.deauthenticateUser();
-    }
-
     ngOnDestroy() {
         this.authChangeSubscription.unsubscribe();
         this.gamesChangeSubscription.unsubscribe();

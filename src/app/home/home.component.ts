@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
         private authService: AuthService,
         private router: Router,
         private breakpointObserver: BreakpointObserver) { }
-    
+
     ngOnInit() {
         this.isUserAuthenticated = this.authService.isAuthenticated();
         this.authChangeSubscription = this.authService.authChangeSubject
@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
                     this.isMobile = false;
                 } else {
                     this.displayMainNavigation = false;
-                    this.isMobile = true;  
+                    this.isMobile = true;
                 }
             });
     }

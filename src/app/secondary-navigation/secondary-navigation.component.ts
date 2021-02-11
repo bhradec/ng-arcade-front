@@ -11,7 +11,7 @@ import { UserLevels } from "../shared/enums/user-levels";
 export class SecondaryNavigationComponent implements OnInit {
     displayMenuButton: boolean;
     displayLogo: boolean;
-    
+
     @Output() displayMenuEvent = new EventEmitter();
 
     constructor(private breakpointObserver: BreakpointObserver) { }
@@ -31,6 +31,6 @@ export class SecondaryNavigationComponent implements OnInit {
     }
 
     toggleMenu() {
-        this.displayMenuEvent.emit();        
+        this.displayMenuEvent.emit();
     }
 }
