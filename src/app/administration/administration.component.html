@@ -1,8 +1,8 @@
 <div class="container">
-    <div id="button-container">
-        <button class="button-green" routerLink="/addGame">Add new game</button>
+    <div id="buttonContainer">
+        <button class="buttonGreen" routerLink="/addGame">Add new game</button>
     </div>
-    <div id="games-container">
+    <div id="gamesContainer">
         <ng-container *ngFor="let game of games">
             <app-game-tile [game]="game" [editMode]="true"></app-game-tile>
         </ng-container>

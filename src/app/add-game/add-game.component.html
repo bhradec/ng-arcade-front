@@ -1,1 +1,77 @@
-<p>add-game works!</p>
+<div id="addGameContainer">
+
+    <form [formGroup]="addGameForm" (submit)="onSubmit()">
+        <h2>Add new game</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" 
+            name="name"
+            placeholder="Name"  
+            id="name"
+            formControlName="name"
+            [ngClass]="{'inputInvalid': isInputInvalid(name) || submitError}">
+
+        <span class="errorText" 
+            *ngIf="isInputInvalid(name) || submitError">
+            Game name not entered.</span>
+
+        <label for="link">Link:</label>
+        <input type="url" 
+            name="link"
+            placeholder="www.playablegame.com"
+            id="link"
+            formControlName="link"
+            [ngClass]="{'inputInvalid': isInputInvalid(link) || submitError}">
+
+        <span class="errorText" 
+            *ngIf="isInputInvalid(link) || submitError">
+            Link not entered.</span>
+
+        <label for="sourceLink">Source link:</label>
+        <input type="url" 
+            name="sourceLink"
+            placeholder="www.gamesource.com"
+            id="sourceLink"
+            formControlName="sourceLink"
+            [ngClass]="{'inputInvalid': isInputInvalid(sourceLink) || submitError}">
+
+        <span class="errorText" 
+            *ngIf="isInputInvalid(sourceLink) || submitError">
+            Source link not entered.</span>
+
+        <label for="imagePath">Image:</label>
+        <input type="file" 
+            name="imagePath"
+            id="imagePath"
+            formControlName="imagePath"
+            [ngClass]="{'inputInvalid': isInputInvalid(imagePath) || submitError}">
+
+        <span class="errorText" 
+            *ngIf="isInputInvalid(imagePath) || submitError">
+            Game image not selected.</span>
+
+        <label for="gameAuthorId">Game author:</label>
+        <select name="gameAuthorId" 
+            id="gameAuthorId">
+            <option *ngFor="let gameAuthor of gameAuthors" 
+                [value]="gameAuthor.id">{{gameAuthor.name}}</option>
+        </select>
+    
+        <span class="errorText" 
+            *ngIf="isInputInvalid(gameAuthorId) || submitError">
+            Game image not selected.</span>
+
+        <div id="buttonContainer">
+            <button type="submit" 
+                class="buttonBlue" 
+                (click)="onSubmit()">Add game</button>
+            <button type="button" 
+                class="buttonYellow" 
+                routerLink="/administration">Cancel</button>
+        </div>
+
+        <span class="errorText"
+            id="addGameErrorMessage" 
+            *ngIf="addGameErrorMessage">{{addGameErrorMessage}}</span>
+    </form>
+</div>

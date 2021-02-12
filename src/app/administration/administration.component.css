@@ -2,14 +2,14 @@
     margin-top: 55px;
 }
 
-#games-container {
+#gamesContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 35px;
 }
 
-#button-container {
+#buttonContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;

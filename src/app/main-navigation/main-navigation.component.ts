@@ -14,7 +14,6 @@ export class MainNavigationComponent implements OnInit {
     @Input() user: User;
     
     constructor(private authService: AuthService) { }
-
     ngOnInit() { }
 
     logout() {

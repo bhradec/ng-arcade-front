@@ -1,4 +1,4 @@
-<div id="register-container">
+<div id="registerContainer">
     <app-logo></app-logo>
 
     <form [formGroup]="registerForm" (submit)="onSubmit()">
@@ -10,9 +10,9 @@
             placeholder="Username"
             id="username"
             formControlName="username"
-            [ngClass]="{'input-invalid': isInputInvalid(username) || submitError}">
+            [ngClass]="{'inputInvalid': isInputInvalid(username) || submitError}">
 
-        <span class="error-text"
+        <span class="errorText"
             *ngIf="isInputInvalid(username) || submitError">
             Username shorter than 4 characters.</span>
 
@@ -22,21 +22,21 @@
             placeholder="Password" 
             id="password"
             formControlName="password"
-            [ngClass]="{'input-invalid': isInputInvalid(password) || submitError}">
+            [ngClass]="{'inputInvalid': isInputInvalid(password) || submitError}">
 
-        <span class="error-text"
+        <span class="errorText"
             *ngIf="isInputInvalid(password) || submitError">
             Password not entered.</span>
 
-        <label for="repeat-password">Repeat password:</label>
+        <label for="repeatPassword">Repeat password:</label>
         <input type="password" 
-            name="repeat-password"
+            name="repeatPassword"
             placeholder="Repeat password"
-            id="repeat-password" 
+            id="repeatPassword" 
             formControlName="repeatPassword"
-            [ngClass]="{'input-invalid': isInputInvalid(repeatPassword) || submitError || !passwordsMatch()}">
+            [ngClass]="{'inputInvalid': isInputInvalid(repeatPassword) || submitError || !passwordsMatch()}">
         
-        <span class="error-text"
+        <span class="errorText"
             *ngIf="isInputInvalid(repeatPassword) || submitError || !passwordsMatch()">
             Passwords do not match.</span>
 
@@ -46,21 +46,21 @@
             placeholder="email@mail.com"
             id="email" 
             formControlName="email"
-            [ngClass]="{'input-invalid': isInputInvalid(email) || submitError}">
+            [ngClass]="{'inputInvalid': isInputInvalid(email) || submitError}">
 
         <span class="error"
             *ngIf="isInputInvalid(email) || submitError">
             Email not valid.</span>
 
-        <div id="button-container">
+        <div id="buttonContainer">
             <button routerLink="/login" 
-                class="button-yellow">Back to login</button>
+                class="buttonYellow">Back to login</button>
             <button type="submit" 
-                class="button-green">Register</button>
+                class="buttonGreen">Register</button>
         </div>
 
-        <span class="error-text"
-            id="register-error-message" 
+        <span class="errorText"
+            id="registerErrorMessage" 
             *ngIf="registerErrorMessage">{{registerErrorMessage}}</span>
     </form>
 </div>

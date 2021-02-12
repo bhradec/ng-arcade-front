@@ -8,11 +8,11 @@ h4 {
     padding-top: 10px;
 }
 
-#game-author-name {
+#gamesAuthorName {
     opacity: 0.5;
 }
 
-#button-container {
+#buttonContainer {
     padding-top: 10px;
     display: flex;
     flex-direction: row;

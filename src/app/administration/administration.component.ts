@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { Game } from '../shared/models/game.model';
 import { GameService } from '../shared/services/game.service';

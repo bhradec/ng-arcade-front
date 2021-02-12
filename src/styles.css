@@ -43,7 +43,7 @@ body, input, textarea, button {
 
 /* Forme. */
 
-input {
+input, select {
     background-color: var(--white);
     border-width: 1px;
     border-style: solid;
@@ -53,7 +53,7 @@ input {
     padding: 10px;
 }
 
-input:focus {
+input:focus, select:focus {
     box-shadow: var(--transparentGrey) 0px 0px 0px 3px;
 }
 
@@ -78,35 +78,35 @@ button:hover {
     transform: scale(1.1);
 }
 
-.button-red {
+.buttonRed {
     background-color: var(--red);
 }
 
-.button-green {
+.buttonGreen {
     background-color: var(--green);
 }
 
-.button-green:focus {
+.buttonGreen:focus {
     box-shadow: var(--transparentGreen) 0px 0px 0px 3px;
 }
 
-.button-blue {
+.buttonBlue {
     background-color: var(--blue);
 }
 
-.button-blue:focus {
+.buttonBlue:focus {
     box-shadow: var(--transparentBlue) 0px 0px 0px 3px;
 }
 
-.button-yellow {
+.buttonYellow {
     background-color: var(--yellow);
 }
 
-.button-yellow:focus {
+.buttonYellow:focus {
     box-shadow: var(--transparentYellow) 0px 0px 0px 3px;
 }
 
-.error-text {
+.errorText {
     color: var(--red);
 }
 

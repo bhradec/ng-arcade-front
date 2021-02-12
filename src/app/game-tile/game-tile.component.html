@@ -3,14 +3,14 @@
         <img [src]="game.imagePath" alt="game-image">
         <h4>{{game.name}}</h4>
     </a>
-    <a href="#" id="game-author-name">{{game.gameAuthorName}}</a>
-    <div id="button-container" *ngIf="editMode">
-        <button class="button-yellow" routerLink="/editGame">
+    <a href="#" id="gamesAuthorName">{{game.gameAuthorName}}</a>
+    <div id="buttonContainer" *ngIf="editMode">
+        <button class="buttonYellow" routerLink="/editGame">
             <img src="../../assets/icons/edit.svg" 
                 alt="Edit" 
                 title="Edit">
         </button>
-        <button class="button-red" (click)="deleteGame(game.id)">
+        <button class="buttonRed" (click)="deleteGame(game.id)">
             <img src="../../assets/icons/delete.svg" 
                 alt="Delete"
                 title="Delete">

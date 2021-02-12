@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { Breakpoints } from "../shared/enums/breakpoints";
-import { UserLevels } from "../shared/enums/user-levels";
 
 @Component({
     selector: 'app-secondary-navigation',

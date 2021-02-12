@@ -1,4 +1,4 @@
-#login-container {
+#loginContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,13 +46,13 @@ input, textarea {
     margin-bottom: 5px;
 }
 
-#button-container {
+#buttonContainer {
     margin-top: 40px;
     display: flex;
     justify-content: center;
 }
 
-#login-error-message {
+#loginErrorMessage {
     text-align: center;
     margin-top: 35px;
 }
