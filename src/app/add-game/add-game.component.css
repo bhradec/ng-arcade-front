@@ -19,11 +19,13 @@ form {
     margin-top: 25px;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
     box-sizing: border-box;
+    margin-top: 140px;
 }
 
 @media (max-width: 500px) {
     form {
         min-width: 100%;
+        margin-top: 20px;
     }
 }
 

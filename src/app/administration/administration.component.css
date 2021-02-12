@@ -22,5 +22,9 @@ app-game-tile {
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 30px;
+    transition: transform .2s;
 }
 
+app-game-tile:hover {
+    transform: scale(1.04);
+}
