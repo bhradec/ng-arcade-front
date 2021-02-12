@@ -32,7 +32,7 @@ const routes: Routes = [
             { path: "gameAuthorProfile", component: GameProfileComponent, canActivate: [AuthGuard] },
             { path: "administration", component: AdministrationComponent, canActivate: [AuthGuard, AdminGuard] },
             { path: "addGame", component: AddGameComponent, canActivate: [AuthGuard, AdminGuard] },
-            { path: "editGame", component: EditGameComponent, canActivate: [AuthGuard, AdminGuard] }
+            { path: "editGame/:id", component: EditGameComponent, canActivate: [AuthGuard, AdminGuard] }
         ]
     }
 ];

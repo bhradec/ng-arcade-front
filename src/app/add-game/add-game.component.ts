@@ -18,6 +18,7 @@ export class AddGameComponent implements OnInit {
     gameAuthorsChangeSubject: BehaviorSubject<GameAuthor[]>;
     gameAuthorsChangeSubscription: Subscription;
     gameAuthors: GameAuthor[] = [];
+    gameImage: any;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -29,7 +30,7 @@ export class AddGameComponent implements OnInit {
             name: new FormControl('', Validators.required),
             link: new FormControl('', Validators.required),
             sourceLink: new FormControl('', Validators.required),
-            imagePath: new FormControl('', Validators.required),
+            image: new FormControl('', Validators.required),
             gameAuthorId: new FormControl('', Validators.required)
         });
 
@@ -52,8 +53,8 @@ export class AddGameComponent implements OnInit {
         return this.addGameForm.get('sourceLink');
     }
 
-    get imagePath() {
-        return this.addGameForm.get('imagePath');
+    get image() {
+        return this.addGameForm.get('image');
     }
 
     get gameAuthorId() {
@@ -64,18 +65,25 @@ export class AddGameComponent implements OnInit {
         return input.invalid && (input.dirty || input.touched);
     }
 
+    onFileChange(event) {
+        if (event.traget.files.length > 0) {
+            this.gameImage = event.target.files[0];
+        }
+    }
+
     onSubmit() {
         if (this.addGameForm.invalid) {
             this.submitError = true;
             this.addGameErrorMessage = 'Plesase enter all required data.';
         } else {
-            let newGame = new Game();
-            newGame.name = this.name.value;
-            newGame.link = this.link.value;
-            newGame.sourceLink = this.sourceLink.value;
-            newGame.imagePath = this.imagePath.value;
-            newGame.gameAuthorId = this.gameAuthorId.value;
-            this.gameService.addGame(newGame);
+            let formData = new FormData();
+            formData.append("name", this.name.value);
+            formData.append("link", this.link.value);
+            formData.append("sourceLink", this.sourceLink.value);
+            formData.append("image", this.gameImage);
+            formData.append("gameAuthorId", this.gameAuthorId.value);
+            this.gameService
+
         }
     }
 

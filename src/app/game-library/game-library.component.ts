@@ -29,13 +29,12 @@ export class GameLibraryComponent implements OnInit {
         this.authChangeSubscription = this.authService.authChangeSubject
             .subscribe((res: boolean) => {
                 this.isUserAuthenticated = res;
+                if (this.isUserAuthenticated) {
+                    this.user = this.authService.getUser();
+                } else {
+                    this.router.navigate(["/login"]);
+                }
             });
-
-        if (this.isUserAuthenticated) {
-            this.user = this.authService.getUser();
-        } else {
-            this.router.navigate(["/login"]);
-        }
 
         this.gamesChangeSubject = this.gameService.getGames();
         this.gamesChangeSubscription = this.gamesChangeSubject

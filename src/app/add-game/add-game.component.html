@@ -39,15 +39,16 @@
             *ngIf="isInputInvalid(sourceLink) || submitError">
             Source link not entered.</span>
 
-        <label for="imagePath">Image:</label>
+        <label for="image">Image:</label>
         <input type="file" 
-            name="imagePath"
-            id="imagePath"
-            formControlName="imagePath"
-            [ngClass]="{'inputInvalid': isInputInvalid(imagePath) || submitError}">
+            name="image"
+            id="image"
+            formControlName="image"
+            (change)="onFileChange($event)"
+            [ngClass]="{'inputInvalid': isInputInvalid(image) || submitError}">
 
         <span class="errorText" 
-            *ngIf="isInputInvalid(imagePath) || submitError">
+            *ngIf="isInputInvalid(image) || submitError">
             Game image not selected.</span>
 
         <label for="gameAuthorId">Game author:</label>

@@ -11,6 +11,7 @@ export class DataService {
     apiGameAuthorsURL: string = environment.API_URL + 'gameAuthors/';
     apiGamesURL: string = environment.API_URL + 'games/';
     apiGamesByAuthorURL: string = environment.API_URL + 'games/byAuthor/';
+    apiGameImagesURL: string = environment.API_URL + 'games/uploadGameImage/';
     apiCommentsURL: string = environment.API_URL + 'comments/';
     apiCommentsByGameURL: string = environment.API_URL + 'comments/byGame/';
     apiCommentsByUserURL: string = environment.API_URL + 'comments/byUser/';
@@ -76,16 +77,24 @@ export class DataService {
         return this.httpClient.get(this.apiGamesURL + id);
     }
 
-    addGame(game) {
-        return this.httpClient.post(this.apiGamesURL, game);
+    /* Prlikom dodavanja igre šalje se multipart forma jer se šalje 
+    i slika igre zajedno sa drugim tekstualnim poljima. */
+    addGame(gameFormData) {
+        return this.httpClient.post(this.apiGamesURL, gameFormData);
     }
 
-    editGame(game) {
-        return this.httpClient.put(this.apiGamesURL, game);
+    /* Prlikom uređivanja igre šalje se multipart forma jer se šalje 
+    i slika igre zajedno sa drugim tekstualnim poljima. */
+    editGame(gameFormData) {
+        return this.httpClient.put(this.apiGamesURL, gameFormData);
     }
 
     deleteGame(id) {
         return this.httpClient.delete(this.apiGamesURL + id);
+    }
+
+    uploadGameImage(gameId, gameImage) {
+        return this.httpClient.post(this.apiGameImagesURL + gameId, gameImage);
     }
 
     // Comments.
