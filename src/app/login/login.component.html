@@ -10,10 +10,10 @@
             placeholder="Username"  
             id="username"
             formControlName="username"
-            [ngClass]="{'inputInvalid': isInputInvalid(username) || submitError}">
+            [ngClass]="{'inputInvalid': isInputInvalid(username)}">
 
         <span class="errorText" 
-            *ngIf="isInputInvalid(username) || submitError">
+            *ngIf="isInputInvalid(username)">
             Username not entered.</span>
 
         <label for="password">Password:</label>
@@ -22,14 +22,14 @@
             placeholder="Password"
             id="password"
             formControlName="password"
-            [ngClass]="{'inputInvalid': isInputInvalid(password) || submitError}">
+            [ngClass]="{'inputInvalid': isInputInvalid(password)}">
 
         <span class="errorText" 
-            *ngIf="isInputInvalid(password) || submitError">
+            *ngIf="isInputInvalid(password)">
             Password not entered.</span>
 
         <div id="buttonContainer">
-            <button type="submit" class="buttonBlue">Login</button>
+            <button type="submit" class="buttonGreen">Login</button>
             <button type="button" class="buttonYellow" routerLink="/register">Register</button>
         </div>
 

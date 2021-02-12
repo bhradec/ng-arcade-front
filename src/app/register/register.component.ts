@@ -14,7 +14,6 @@ export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     newUser: User;
     registerErrorMessage: string;
-    submitError: boolean = false;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -45,7 +44,6 @@ export class RegisterComponent implements OnInit {
 
     onSubmit() {
         if (this.registerForm.invalid) {
-            this.submitError = true;
             this.registerErrorMessage = 'Plesase enter all required data.';
         } else {
             this.newUser = new User();

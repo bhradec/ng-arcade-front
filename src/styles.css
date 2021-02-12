@@ -110,6 +110,10 @@ button:hover {
     color: var(--red);
 }
 
+.descriptionText {
+    opacity: 0.5;
+}
+
 /* Poveznice. */
 
 a:link, a:visited {

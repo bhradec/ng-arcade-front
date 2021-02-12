@@ -1,5 +1,4 @@
 <div id="addGameContainer">
-
     <form [formGroup]="addGameForm" (submit)="onSubmit()">
         <h2>Add new game</h2>
 
@@ -9,10 +8,9 @@
             placeholder="Name"  
             id="name"
             formControlName="name"
-            [ngClass]="{'inputInvalid': isInputInvalid(name) || submitError}">
-
+            [ngClass]="{'inputInvalid': isInputInvalid(name)}">
         <span class="errorText" 
-            *ngIf="isInputInvalid(name) || submitError">
+            *ngIf="isInputInvalid(name)">
             Game name not entered.</span>
 
         <label for="link">Link:</label>
@@ -21,10 +19,11 @@
             placeholder="www.playablegame.com"
             id="link"
             formControlName="link"
-            [ngClass]="{'inputInvalid': isInputInvalid(link) || submitError}">
-
+            [ngClass]="{'inputInvalid': isInputInvalid(link)}">
+        <span class="descriptionText">
+            Link to a playable instance of a game.</span> 
         <span class="errorText" 
-            *ngIf="isInputInvalid(link) || submitError">
+            *ngIf="isInputInvalid(link)">
             Link not entered.</span>
 
         <label for="sourceLink">Source link:</label>
@@ -33,10 +32,11 @@
             placeholder="www.gamesource.com"
             id="sourceLink"
             formControlName="sourceLink"
-            [ngClass]="{'inputInvalid': isInputInvalid(sourceLink) || submitError}">
-
+            [ngClass]="{'inputInvalid': isInputInvalid(sourceLink)}">
+        <span class="descriptionText">
+            Link to a repository containing game source code.</span> 
         <span class="errorText" 
-            *ngIf="isInputInvalid(sourceLink) || submitError">
+            *ngIf="isInputInvalid(sourceLink)">
             Source link not entered.</span>
 
         <label for="image">Image:</label>
@@ -45,22 +45,23 @@
             id="image"
             formControlName="image"
             (change)="onFileChange($event)"
-            [ngClass]="{'inputInvalid': isInputInvalid(image) || submitError}">
-
+            [ngClass]="{'inputInvalid': isInputInvalid(image)}">
         <span class="errorText" 
-            *ngIf="isInputInvalid(image) || submitError">
+            *ngIf="isInputInvalid(image)">
             Game image not selected.</span>
 
         <label for="gameAuthorId">Game author:</label>
         <select name="gameAuthorId" 
-            id="gameAuthorId">
+            id="gameAuthorId"
+            formControlName="gameAuthorId">
             <option *ngFor="let gameAuthor of gameAuthors" 
                 [value]="gameAuthor.id">{{gameAuthor.name}}</option>
         </select>
-    
+        <span class="descriptionText">
+            If game author is not available, add new game author on the administration page.</span> 
         <span class="errorText" 
-            *ngIf="isInputInvalid(gameAuthorId) || submitError">
-            Game image not selected.</span>
+            *ngIf="isInputInvalid(gameAuthorId)">
+            Game author not selected.</span>
 
         <div id="buttonContainer">
             <button type="submit" 

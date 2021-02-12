@@ -10,10 +10,10 @@
             placeholder="Username"
             id="username"
             formControlName="username"
-            [ngClass]="{'inputInvalid': isInputInvalid(username) || submitError}">
+            [ngClass]="{'inputInvalid': isInputInvalid(username)}">
 
         <span class="errorText"
-            *ngIf="isInputInvalid(username) || submitError">
+            *ngIf="isInputInvalid(username)">
             Username shorter than 4 characters.</span>
 
         <label for="password">Password:</label>
@@ -22,10 +22,10 @@
             placeholder="Password" 
             id="password"
             formControlName="password"
-            [ngClass]="{'inputInvalid': isInputInvalid(password) || submitError}">
+            [ngClass]="{'inputInvalid': isInputInvalid(password)}">
 
         <span class="errorText"
-            *ngIf="isInputInvalid(password) || submitError">
+            *ngIf="isInputInvalid(password)">
             Password not entered.</span>
 
         <label for="repeatPassword">Repeat password:</label>
@@ -34,10 +34,10 @@
             placeholder="Repeat password"
             id="repeatPassword" 
             formControlName="repeatPassword"
-            [ngClass]="{'inputInvalid': isInputInvalid(repeatPassword) || submitError || !passwordsMatch()}">
+            [ngClass]="{'inputInvalid': isInputInvalid(repeatPassword) || !passwordsMatch()}">
         
         <span class="errorText"
-            *ngIf="isInputInvalid(repeatPassword) || submitError || !passwordsMatch()">
+            *ngIf="isInputInvalid(repeatPassword) || !passwordsMatch()">
             Passwords do not match.</span>
 
         <label for="email">Email:</label>
@@ -46,17 +46,17 @@
             placeholder="email@mail.com"
             id="email" 
             formControlName="email"
-            [ngClass]="{'inputInvalid': isInputInvalid(email) || submitError}">
+            [ngClass]="{'inputInvalid': isInputInvalid(email)}">
 
         <span class="error"
-            *ngIf="isInputInvalid(email) || submitError">
+            *ngIf="isInputInvalid(email)">
             Email not valid.</span>
 
         <div id="buttonContainer">
-            <button routerLink="/login" 
-                class="buttonYellow">Back to login</button>
             <button type="submit" 
                 class="buttonGreen">Register</button>
+            <button routerLink="/login" 
+                class="buttonYellow">Back to login</button>
         </div>
 
         <span class="errorText"

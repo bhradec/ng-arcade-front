@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
     authErrorSubscription: Subscription;
     loginForm: FormGroup;
     loginErrorMessage: string;
-    submitError: boolean = false;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -46,7 +45,6 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         if (this.loginForm.invalid) {
-            this.submitError = true;
             this.loginErrorMessage = 'Plesase enter all required data.';
         } else {
             this.authService.authenticateUser(

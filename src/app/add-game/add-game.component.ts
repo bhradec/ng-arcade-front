@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { GameAuthor } from '../shared/models/game-author.model';
-import { Game } from '../shared/models/game.model';
 import { GameAuthorService } from '../shared/services/game-author.service';
 import { GameService } from '../shared/services/game.service';
 
@@ -13,7 +12,6 @@ import { GameService } from '../shared/services/game.service';
 })
 export class AddGameComponent implements OnInit {
     addGameForm: FormGroup;
-    submitError: boolean = false;
     addGameErrorMessage: string;
     gameAuthorsChangeSubject: BehaviorSubject<GameAuthor[]>;
     gameAuthorsChangeSubscription: Subscription;
@@ -66,15 +64,23 @@ export class AddGameComponent implements OnInit {
     }
 
     onFileChange(event) {
-        if (event.traget.files.length > 0) {
+        if (event.target.files.length > 0) {
             this.gameImage = event.target.files[0];
         }
     }
 
     onSubmit() {
         if (this.addGameForm.invalid) {
-            this.submitError = true;
+            console.log(this.addGameForm);
             this.addGameErrorMessage = 'Plesase enter all required data.';
+
+            const controls = this.addGameForm.controls;
+            for (const name in controls) {
+                if (controls[name].invalid) {
+                    console.log(name);
+                }
+            }
+            
         } else {
             let formData = new FormData();
             formData.append("name", this.name.value);
@@ -82,8 +88,7 @@ export class AddGameComponent implements OnInit {
             formData.append("sourceLink", this.sourceLink.value);
             formData.append("image", this.gameImage);
             formData.append("gameAuthorId", this.gameAuthorId.value);
-            this.gameService
-
+            this.gameService.addGame(formData);
         }
     }
 
