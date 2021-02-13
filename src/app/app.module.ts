@@ -20,6 +20,10 @@ import { GameTileComponent } from './game-tile/game-tile.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
+import { AddGameAuthorComponent } from './add-game-author/add-game-author.component';
+import { EditGameAuthorComponent } from './edit-game-author/edit-game-author.component';
+import { ManageGamesComponent } from './manage-games/manage-games.component';
+import { ManageGameAuthorsComponent } from './manage-game-authors/manage-game-authors.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +41,11 @@ import { EditGameComponent } from './edit-game/edit-game.component';
         GameTileComponent,
         AdministrationComponent,
         AddGameComponent,
-        EditGameComponent
+        EditGameComponent,
+        AddGameAuthorComponent,
+        EditGameAuthorComponent,
+        ManageGamesComponent,
+        ManageGameAuthorsComponent
     ],
     imports: [
         BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { GameAuthor } from '../shared/models/game-author.model';
 import { GameAuthorService } from '../shared/services/game-author.service';
@@ -21,7 +22,8 @@ export class AddGameComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private gameService: GameService,
-        private gameAuthorService: GameAuthorService) { }
+        private gameAuthorService: GameAuthorService,
+        private router: Router) { }
 
     ngOnInit() {
         this.addGameForm = this.formBuilder.group({
@@ -71,16 +73,7 @@ export class AddGameComponent implements OnInit {
 
     onSubmit() {
         if (this.addGameForm.invalid) {
-            console.log(this.addGameForm);
-            this.addGameErrorMessage = 'Plesase enter all required data.';
-
-            const controls = this.addGameForm.controls;
-            for (const name in controls) {
-                if (controls[name].invalid) {
-                    console.log(name);
-                }
-            }
-            
+            this.addGameErrorMessage = 'Plesase enter all required data.';            
         } else {
             let formData = new FormData();
             formData.append("name", this.name.value);
@@ -89,6 +82,7 @@ export class AddGameComponent implements OnInit {
             formData.append("image", this.gameImage);
             formData.append("gameAuthorId", this.gameAuthorId.value);
             this.gameService.addGame(formData);
+            this.router.navigate(["/manageGames"]);
         }
     }
 

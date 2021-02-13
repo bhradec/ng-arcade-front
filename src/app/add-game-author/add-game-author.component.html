@@ -1,0 +1,29 @@
+<div id="addGameAuthorContainer">
+    <form [formGroup]="addGameAuthorForm" (submit)="onSubmit()">
+        <h2>Add game author</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" 
+            name="name"
+            placeholder="Name"  
+            id="name"
+            formControlName="name"
+            [ngClass]="{'inputInvalid': isInputInvalid(name)}">
+        <span class="errorText" 
+            *ngIf="isInputInvalid(name)">
+            Name not entered.</span>
+
+        <div id="buttonContainer">
+            <button type="submit" 
+                class="buttonBlue" 
+                (click)="onSubmit()">Add game author</button>
+            <button type="button" 
+                class="buttonRed" 
+                routerLink="/manageGameAuthors">Cancel</button>
+        </div>
+
+        <span class="errorText"
+            id="addGameAuthorErrorMessage" 
+            *ngIf="addGameAuthorErrorMessage">{{addGameAuthorErrorMessage}}</span>
+    </form>
+</div>

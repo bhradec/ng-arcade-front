@@ -1,0 +1,20 @@
+<div class="container">
+    <div id="actions">
+        <h1>Welcome to game management!</h1>
+        <span>What would You like to do?</span>
+        <div id="buttonContainer">
+            <button class="buttonGreen" routerLink="/addGame">Add new game</button>
+            <button class="buttonRed" routerLink="/administration">Back to administration</button>
+        </div>
+        <h2>Delete or edit games:</h2>
+    </div>
+    <span class="errorText" 
+        id="errorSpan" 
+        *ngIf="games.length == 0">
+        No games to show.</span>
+    <div id="gamesContainer" *ngIf="games.length > 0">
+        <ng-container *ngFor="let game of games">
+            <app-game-tile [game]="game" [editMode]="true"></app-game-tile>
+        </ng-container>
+    </div>
+</div>

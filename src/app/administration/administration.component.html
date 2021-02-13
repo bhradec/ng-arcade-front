@@ -1,10 +1,12 @@
 <div class="container">
+    <h1>Welcome to administration!</h1>
+    <span>What would You like to do?</span>
     <div id="buttonContainer">
-        <button class="buttonGreen" routerLink="/addGame">Add new game</button>
-    </div>
-    <div id="gamesContainer">
-        <ng-container *ngFor="let game of games">
-            <app-game-tile [game]="game" [editMode]="true"></app-game-tile>
-        </ng-container>
+        <button class="buttonBlue" 
+            routerLink="/manageGames">
+            Manage games</button>
+        <button class="buttonBlue" 
+            routerLink="/manageGameAuthors">
+            Manage game authors</button>
     </div>
 </div>

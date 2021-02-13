@@ -7,8 +7,8 @@
     --yellow: rgb(255, 200, 92);
     --latte: rgb(248, 241, 241);
     --purple: rgb(112, 34, 131);
-    --grey: rgb(216, 212, 200);
-    --lightGrey: rgb(136, 133, 125);
+    --lightGrey: rgb(216, 212, 200);
+    --grey: rgb(136, 133, 125);
     --darkGrey: rgb(29, 29, 22);
     --white: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
@@ -111,7 +111,7 @@ button:hover {
 }
 
 .descriptionText {
-    opacity: 0.5;
+    color: var(--grey);
 }
 
 /* Poveznice. */

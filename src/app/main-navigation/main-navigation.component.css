@@ -39,5 +39,5 @@ nav ul li {
 .separator {
     height: 1px;
     width: 100%;
-    background-color: var(--grey);
+    background-color: var(--lightGrey);
 }

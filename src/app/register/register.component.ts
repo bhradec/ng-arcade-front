@@ -53,8 +53,15 @@ export class RegisterComponent implements OnInit {
             this.newUser.password = this.registerForm.value.password;
             this.newUser.level = 1;
 
-            this.usersService.addUser(this.newUser).subscribe();
-            this.router.navigate(["/login"]);
+            this.usersService.addUser(this.newUser).subscribe(
+                (res: {status: number, description?: string}) => {
+                    if (res.status == 200) {
+                        this.router.navigate(["/login"]);
+                    } else {
+                        this.registerErrorMessage = res.description;
+                    }
+                }
+            );
         }
     }
 
