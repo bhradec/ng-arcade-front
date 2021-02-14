@@ -3,7 +3,7 @@
         <h1>Welcome to game authors management!</h1>
         <span>What would You like to do?</span>
         <div id="buttonContainer">
-            <button class="buttonGreen" routerLink="/addGameAtuhor">Add new game author</button>
+            <button class="buttonGreen" routerLink="/addGameAuthor">Add new game author</button>
             <button class="buttonRed" routerLink="/administration">Back to administration</button>
         </div>
         <h2>Delete or edit game athors:</h2>
@@ -17,14 +17,14 @@
             <tr *ngFor="let gameAuthor of gameAuthors">
                 <td>{{gameAuthor.name}}</td>
                 <td class="buttonContainer">
-                    <button class="buttonYellow" routerLink="/editGame">
+                    <button class="buttonYellow" routerLink="/editGameAuthor">
                         <img src="../../assets/icons/edit.svg" 
                             alt="Edit" 
                             title="Edit">
                     </button>
                 </td>
                 <td class="buttonContainer">
-                    <button class="buttonRed" (click)="deleteGame(game.id)">
+                    <button class="buttonRed" (click)="deleteGameAuthor(gameAuthor.id)">
                         <img src="../../assets/icons/delete.svg" 
                             alt="Delete"
                             title="Delete">

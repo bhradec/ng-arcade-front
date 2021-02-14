@@ -1,9 +1,10 @@
 <div class="game">
-    <a href="#">
+    <a [routerLink]="['/gameProfile', game.id]">
         <img [src]="game.imagePath" alt="gameImage" id="gameImage">
         <h4>{{game.name}}</h4>
     </a>
-    <a href="#" id="gamesAuthorName">{{game.gameAuthorName}}</a>
+    <a [routerLink]="['/gameAuthorProfile', game.gameAuthorId]" 
+        id="gamesAuthorName">{{game.gameAuthorName}}</a>
     <div id="buttonContainer" *ngIf="editMode">
         <button class="buttonYellow" routerLink="/editGame">
             <img src="../../assets/icons/edit.svg" 

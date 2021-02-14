@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Game } from '../models/game.model';
 import { DataService } from './data.service';
 import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -52,9 +53,5 @@ export class GameService {
                 this.games = this.games.filter(game => game.id != id);
                 this.gamesChangeSubject.next(this.games);
             });
-    }
-
-    uploadGameImage(gameId, gameImage) {
-        return this.dataService.uploadGameImage(gameId, gameImage);
     }
 }

@@ -16,10 +16,7 @@ export class ManageGameAuthorsComponent implements OnInit {
     gameAuthorsChangeSubscription: Subscription;
     gameAuthors: GameAuthor[] = [];
 
-    constructor(
-        private authService: AuthService,
-        private gameAuthorService: GameAuthorService,
-        private router: Router) { }
+    constructor(private gameAuthorService: GameAuthorService) { }
 
     ngOnInit() {
         this.gameAuthorsChangeSubject = this.gameAuthorService.getGameAuthors();
@@ -27,6 +24,10 @@ export class ManageGameAuthorsComponent implements OnInit {
             .subscribe((res: Game[]) => {
                 this.gameAuthors = res;
             });
+    }
+
+    deleteGameAuthor(id) {
+        this.gameAuthorService.deleteGameAuthor(id);
     }
 
     ngOnDestroy() {

@@ -12,9 +12,9 @@ import { GameService } from '../shared/services/game.service';
     styleUrls: ['./game-library.component.css'],
 })
 export class GameLibraryComponent implements OnInit {
-    gamesChangeSubject: BehaviorSubject<Game[]>;
     isUserAuthenticated: boolean = false;;
     authChangeSubscription: Subscription;
+    gamesChangeSubject: BehaviorSubject<Game[]>;
     gamesChangeSubscription: Subscription;
     games: Game[] = [];
     user: User;
