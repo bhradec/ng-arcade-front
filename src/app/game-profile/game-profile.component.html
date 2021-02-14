@@ -15,10 +15,11 @@
         <p id="gameDescription">{{game.description}}</p>
         
         <a [href]="game.link">
-            <button class="buttonGreen" >Play</button>
+            <button class="buttonGreen">Play</button>
         </a>
         <a [href]="game.sourceLink">
             <button class="buttonYellow">View source</button>
         </a>
     </div>
+    <app-comments [gameId]="game.id" *ngIf="game"></app-comments>
 </div>

@@ -24,6 +24,9 @@ import { AddGameAuthorComponent } from './add-game-author/add-game-author.compon
 import { EditGameAuthorComponent } from './edit-game-author/edit-game-author.component';
 import { ManageGamesComponent } from './manage-games/manage-games.component';
 import { ManageGameAuthorsComponent } from './manage-game-authors/manage-game-authors.component';
+import { CommentsComponent } from './comments/comments.component';
+import { NewCommentComponent } from './new-comment/new-comment.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
     declarations: [
@@ -45,7 +48,10 @@ import { ManageGameAuthorsComponent } from './manage-game-authors/manage-game-au
         AddGameAuthorComponent,
         EditGameAuthorComponent,
         ManageGamesComponent,
-        ManageGameAuthorsComponent
+        ManageGameAuthorsComponent,
+        CommentsComponent,
+        NewCommentComponent,
+        CommentComponent
     ],
     imports: [
         BrowserModule,

@@ -38,7 +38,7 @@ export class GameProfileComponent implements OnInit {
                 }
             });
     }
-
+    
     ngOnDestroy() {
         this.gamesChangeSubscription.unsubscribe();
     }

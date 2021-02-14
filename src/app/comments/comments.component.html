@@ -1,0 +1,18 @@
+<div class="comment-container">
+    <h2>Comments ({{comments.length}}):</h2>
+    <div id="comment" *ngFor="let comment of comments">
+        <app-comment [comment]="comment" [user]="user" [enableEdit]="true"></app-comment>
+    </div>
+
+    <app-new-comment *ngIf="displayNewCommentComponent"
+        [user]="user" 
+        [gameId]="gameId"></app-new-comment>
+    <div class="buttonContainer">
+        <button class="buttonGreen" 
+            (click)="displayNewCommentComponent=true"
+            *ngIf="displayNewCommentComponent==false">New comment</button>
+        <button class="buttonRed" 
+            (click)="displayNewCommentComponent=false"
+            *ngIf="displayNewCommentComponent==true">Close</button>
+    </div>
+</div>

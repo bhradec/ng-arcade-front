@@ -1,0 +1,22 @@
+<form [formGroup]="newCommentForm" (submit)="onSubmit()">
+    <label for="username">Username:</label>
+    <input type="text" 
+        id="username" 
+        placeholder="Username"
+        formControlName="username">
+
+    <label for="comment">Comment:</label>
+    <textarea type="text" 
+        id="comment" 
+        cols="75" rows="10"
+        formControlName="comment"
+        [ngClass]="{'input-invalid': comment.invalid && (comment.dirty || comment.touched)}"></textarea>
+    <div class="error"
+        *ngIf="comment.invalid && (comment.dirty || comment.touched)">Comment not entered.</div>
+
+    <div class="btn-container">
+        <button type="submit" 
+            class="buttonGreen"
+            [disabled]="!newCommentForm.valid">Send</button>
+    </div>
+</form>

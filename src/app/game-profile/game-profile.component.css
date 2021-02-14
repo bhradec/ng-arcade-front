@@ -1,6 +1,7 @@
 #gameData {
     width: 100%;
     margin-top: 55px;
+    margin-bottom: 55px;
 }
 
 #gameImage {
@@ -31,4 +32,8 @@
 
 #gameDescription {
     white-space: pre-wrap;
+}
+
+button {
+    margin-left: 0px;
 }

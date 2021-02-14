@@ -26,6 +26,8 @@ export class GameLibraryComponent implements OnInit {
 
     ngOnInit() {
         this.isUserAuthenticated = this.authService.isAuthenticated();
+        this.user = this.authService.getUser();
+        
         this.authChangeSubscription = this.authService.authChangeSubject
             .subscribe((res: boolean) => {
                 this.isUserAuthenticated = res;
