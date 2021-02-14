@@ -25,7 +25,10 @@ body {
     padding: 0px;
 }
 
-body, input, textarea, button {
+body, 
+input, 
+textarea, 
+button {
     font-family: "Raleway", sans-serif;
     font-size: 1rem;
     background-color: var(--latte);
@@ -38,12 +41,16 @@ body, input, textarea, button {
     box-sizing: border-box;
     margin-right: auto;
     margin-left: auto;
-    max-width: 1140px
+    max-width: 1140px;
+    padding-left: 55px;
+    padding-right: 55px;
 }
 
 /* Forme. */
 
-input, select, textarea {
+input, 
+select, 
+textarea {
     background-color: var(--white);
     border-width: 1px;
     border-style: solid;
@@ -53,7 +60,9 @@ input, select, textarea {
     padding: 10px;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus, 
+select:focus, 
+textarea:focus {
     box-shadow: var(--transparentGrey) 0px 0px 0px 3px;
 }
 
@@ -116,7 +125,8 @@ button:hover {
 
 /* Poveznice. */
 
-a:link, a:visited {
+a:link, 
+a:visited {
     text-decoration: none;
     color: black;
     transition: all .2s ease-in-out;

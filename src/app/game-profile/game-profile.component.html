@@ -6,9 +6,19 @@
     <div id="gameData" *ngIf="game">
         <img [src]="game.imagePath" alt="gameImage" id="gameImage">
         <h1 id="gameName">{{game.name}}</h1>
-        <a [routerLink]="['/gameAuthorProfile', game.gameAuthorId]" id="gameAuthorName">
-            <h2>{{game.gameAuthorName}}</h2>
-        </a>
+        
+        <h2 id="gameAuthorName">
+            by <a [routerLink]="['/gameAuthorProfile', game.gameAuthorId]">
+                {{game.gameAuthorName}}</a>
+        </h2>
+
         <p id="gameDescription">{{game.description}}</p>
+        
+        <a [href]="game.link">
+            <button class="buttonGreen" >Play</button>
+        </a>
+        <a [href]="game.sourceLink">
+            <button class="buttonYellow">View source</button>
+        </a>
     </div>
 </div>

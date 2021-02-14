@@ -10,18 +10,25 @@
 }
 
 #errorSpan {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     font-weight: bold;
     width: 100%;
     margin-top: 55px;
+    text-align: center;
 }
 
-#gameAuthorName:link, #gameAuthorName:visited {
+#gameAuthorName {
     color: var(--grey);
 }
 
-#gameAuthorName:hover {
+#gameAuthorName a:link, 
+#gameAuthorName a:visited {
+    color: var(--grey);
+}
+
+#gameAuthorName a:hover {
     color: var(--purple);
+}
+
+#gameDescription {
+    white-space: pre-wrap;
 }
