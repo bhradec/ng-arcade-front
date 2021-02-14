@@ -3,8 +3,12 @@
     id="errorSpan"
     *ngIf="errorMessage">
     {{errorMessage}}</span>
-    <div id="gameProfile" *ngIf="game">
-        <h1>{{game.name}}</h1>
-        {{game.imagePath}}
+    <div id="gameData" *ngIf="game">
+        <img [src]="game.imagePath" alt="gameImage" id="gameImage">
+        <h1 id="gameName">{{game.name}}</h1>
+        <a [routerLink]="['/gameAuthorProfile', game.gameAuthorId]" id="gameAuthorName">
+            <h2>{{game.gameAuthorName}}</h2>
+        </a>
+        <p id="gameDescription">{{game.description}}</p>
     </div>
 </div>

@@ -1,3 +1,14 @@
+#gameData {
+    width: 100%;
+    margin-top: 55px;
+}
+
+#gameImage {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
 #errorSpan {
     display: flex;
     flex-direction: row;
@@ -5,4 +16,12 @@
     font-weight: bold;
     width: 100%;
     margin-top: 55px;
+}
+
+#gameAuthorName:link, #gameAuthorName:visited {
+    color: var(--grey);
+}
+
+#gameAuthorName:hover {
+    color: var(--purple);
 }

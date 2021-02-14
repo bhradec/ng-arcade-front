@@ -4,6 +4,7 @@ export class Game {
     link: string;
     sourceLink: string;
     imagePath: string;
+    description: string;
     gameAuthorId: number;
     gameAuthorName?: string;
 }

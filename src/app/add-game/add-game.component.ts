@@ -27,11 +27,12 @@ export class AddGameComponent implements OnInit {
 
     ngOnInit() {
         this.addGameForm = this.formBuilder.group({
-            name: new FormControl('', Validators.required),
-            link: new FormControl('', Validators.required),
-            sourceLink: new FormControl('', Validators.required),
-            image: new FormControl('', Validators.required),
-            gameAuthorId: new FormControl('', Validators.required)
+            name: new FormControl("", Validators.required),
+            link: new FormControl("", Validators.required),
+            sourceLink: new FormControl("", Validators.required),
+            image: new FormControl("", Validators.required),
+            description: new FormControl("", Validators.required),
+            gameAuthorId: new FormControl("", Validators.required)
         });
 
         this.gameAuthorsChangeSubject = this.gameAuthorService.getGameAuthors();
@@ -57,6 +58,10 @@ export class AddGameComponent implements OnInit {
         return this.addGameForm.get('image');
     }
 
+    get description() {
+        return this.addGameForm.get('description');
+    }
+
     get gameAuthorId() {
         return this.addGameForm.get('gameAuthorId');
     }
@@ -80,6 +85,7 @@ export class AddGameComponent implements OnInit {
             formData.append("link", this.link.value);
             formData.append("sourceLink", this.sourceLink.value);
             formData.append("image", this.gameImage);
+            formData.append("description", this.description.value);
             formData.append("gameAuthorId", this.gameAuthorId.value);
             this.gameService.addGame(formData);
             this.router.navigate(["/manageGames"]);
