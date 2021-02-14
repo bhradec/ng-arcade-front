@@ -7,12 +7,24 @@
 
 app-game-tile {
     box-sizing: border-box;
-    flex-basis: 25%;
+    width: 25%;
     padding-top: 10px;
     padding-right: 10px;
     padding-left: 10px;
     padding-bottom: 30px;
     transition: transform .2s;
+}
+
+@media (max-width: 769px) {
+    app-game-tile {
+        width: 50%;
+    }
+}
+
+@media (max-width: 575px) {
+    app-game-tile {
+        width: 100%;
+    }
 }
 
 app-game-tile:hover {

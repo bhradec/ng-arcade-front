@@ -17,7 +17,7 @@ export class SecondaryNavigationComponent implements OnInit {
 
     ngOnInit() {
         this.breakpointObserver
-            .observe([`(min-width: ${Breakpoints.MEDIUM}px)`])
+            .observe([`(min-width: ${Breakpoints.MEDIUM + 1}px)`])
             .subscribe((breakpointState: BreakpointState) => {
                 if (breakpointState.matches) {
                     this.displayMenuButton = false;

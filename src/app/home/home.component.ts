@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
         }
 
         this.breakpointObserver
-            .observe([`(min-width: ${Breakpoints.MEDIUM}px)`])
+            .observe([`(min-width: ${Breakpoints.MEDIUM + 1}px)`])
             .subscribe((breakpointState: BreakpointState) => {
                 if (breakpointState.matches) {
                     this.displayMainNavigation = true;
