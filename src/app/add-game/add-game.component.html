@@ -50,6 +50,17 @@
             *ngIf="isInputInvalid(image)">
             Game image not selected.</span>
 
+        <label for="description">Description:</label>
+        <textarea name="description" 
+            id="description" 
+            cols="30"
+            rows="10"
+            formControlName="description"
+            [ngClass]="{'inputInvalid': isInputInvalid(description)}">Description</textarea>
+        <span class="errorText" 
+            *ngIf="isInputInvalid(description)">
+            Description not entered.</span>
+
         <label for="gameAuthorId">Game author:</label>
         <select name="gameAuthorId" 
             id="gameAuthorId"
