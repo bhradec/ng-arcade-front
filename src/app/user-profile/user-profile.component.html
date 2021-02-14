@@ -1,1 +1,21 @@
-<p>user-profile works!</p>
+<div class="container">
+    <h1>Hi, {{user.username}}! <span id="email">({{user.email}})</span></h1>
+    <h2>Games you played:</h2>
+    <table id="gameData">
+        <tr>
+            <th colspan="2">Name</th>
+            <th>Timestamp</th>
+        </tr>
+        <tr *ngFor="let gameUser of gamesUsers">
+            <td>
+                <a [routerLink]="['/gameProfile', gameUser.id]">{{gameUser.name}}</a>
+            </td>
+            <td>
+                <a [routerLink]="['/gameProfile', gameUser.id]">
+                    <img [src]="gameUser.imagePath" alt="gameImage">
+                </a>
+            </td>
+            <td>{{gameUser.timestamp | date: "medium"}}</td>
+        </tr>
+    </table>
+</div>

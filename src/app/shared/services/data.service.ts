@@ -7,14 +7,16 @@ import { environment } from 'src/environments/environment';
 })
 export class DataService {
     apiRootURL: string = environment.API_URL;
-    apiUsersURL: string = environment.API_URL + 'users/';
-    apiGameAuthorsURL: string = environment.API_URL + 'gameAuthors/';
-    apiGamesURL: string = environment.API_URL + 'games/';
-    apiGamesByAuthorURL: string = environment.API_URL + 'games/byAuthor/';
-    apiGameImagesURL: string = environment.API_URL + 'games/uploadGameImage/';
-    apiCommentsURL: string = environment.API_URL + 'comments/';
-    apiCommentsByGameURL: string = environment.API_URL + 'comments/byGame/';
-    apiCommentsByUserURL: string = environment.API_URL + 'comments/byUser/';
+    apiUsersURL: string = environment.API_URL + "users/";
+    apiGameAuthorsURL: string = environment.API_URL + "gameAuthors/";
+    apiGamesURL: string = environment.API_URL + "games/";
+    apiGamesByAuthorURL: string = environment.API_URL + "games/byAuthor/";
+    apiGameImagesURL: string = environment.API_URL + "games/uploadGameImage/";
+    apiCommentsURL: string = environment.API_URL + "comments/";
+    apiCommentsByGameURL: string = environment.API_URL + "comments/byGame/";
+    apiCommentsByUserURL: string = environment.API_URL + "comments/byUser/";
+    apiGamesUsersURL: string = environment.API_URL + "gamesUsers/";
+    apiGamesUsersByUserURL: string = environment.API_URL + "gamesUsers/byUser/";
     apiAuthURL: string = environment.API_URL + 'auth/';
 
     constructor(private httpClient: HttpClient) { }
@@ -125,6 +127,24 @@ export class DataService {
 
     deleteComment(id) {
         return this.httpClient.delete(this.apiCommentsURL + id);
+    }
+
+    // GamesUsers.
+
+    getGamesPlayedByUsers() {
+        return this.httpClient.get(this.apiGamesUsersURL);
+    }
+
+    getGamesPlayedByUser(id) {
+        return this.httpClient.get(this.apiGamesUsersByUserURL + id);
+    }
+
+    addGamePlayedByUser(userId, gameId, timestamp) {
+        return this.httpClient.post(this.apiGamesUsersURL, {
+            userId: userId,
+            gameId: gameId,
+            timestamp: timestamp
+        });
     }
 
     // Authentication.

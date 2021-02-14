@@ -1,0 +1,30 @@
+#gameData th {
+    text-align: left;
+}
+
+#gameData img {
+    max-width: 100px;
+}
+
+.container {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+td {
+    padding: 10px;
+    border-color: var(--grey);
+    border-width: 1px;
+    border-style: solid;
+}

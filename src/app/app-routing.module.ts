@@ -31,7 +31,7 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         children: [
             { path: "", component: GameLibraryComponent, canActivate: [AuthGuard] },
-            { path: "userProfile/:id", component: UserProfileComponent, canActivate: [AuthGuard] },
+            { path: "userProfile", component: UserProfileComponent, canActivate: [AuthGuard] },
             { path: "gameProfile/:id", component: GameProfileComponent, canActivate: [AuthGuard] },
             { path: "gameAuthorProfile/:id", component: GameProfileComponent, canActivate: [AuthGuard] },
             { path: "administration", component: AdministrationComponent, canActivate: [AuthGuard, AdminGuard] },

@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { Game } from '../shared/models/game.model';
+import { User } from '../shared/models/user.model';
+import { AuthService } from '../shared/services/auth.service';
 import { GameService } from '../shared/services/game.service';
+import { GamesUsersService } from '../shared/services/games-users.service';
 
 @Component({
     selector: 'app-game-profile',
@@ -10,20 +13,36 @@ import { GameService } from '../shared/services/game.service';
     styleUrls: ['./game-profile.component.css'],
 })
 export class GameProfileComponent implements OnInit {
+    isUserAuthenticated: boolean = false;;
+    authChangeSubscription: Subscription;
     gamesChangeSubject: BehaviorSubject<Game[]>;
     gamesChangeSubscription: Subscription;
     errorMessage: string;
     games: Game[];
     game: Game;
+    user: User;
 
     constructor(
         private activatedRoute: ActivatedRoute,
-        private gameService: GameService) { }
+        private gameService: GameService,
+        private authService: AuthService,
+        private gamesUsersService: GamesUsersService,) { }
 
     ngOnInit() {
         let routeParams = this.activatedRoute.snapshot.paramMap;
         let id = Number(routeParams.get("id"));
 
+        this.isUserAuthenticated = this.authService.isAuthenticated();
+        this.user = this.authService.getUser();
+        
+        this.authChangeSubscription = this.authService.authChangeSubject
+            .subscribe((res: boolean) => {
+                this.isUserAuthenticated = res;
+                if (this.isUserAuthenticated) {
+                    this.user = this.authService.getUser();
+                }
+            });
+        
         this.gamesChangeSubject = this.gameService.getGames();
         this.gamesChangeSubscription = this.gamesChangeSubject
             .subscribe((res: Game[]) => {
@@ -37,6 +56,10 @@ export class GameProfileComponent implements OnInit {
                     this.errorMessage = "";
                 }
             });
+    }
+
+    logGamePlayedByUser() {
+        this.gamesUsersService.addGamePlayedByUser(this.user.id, this.game.id);
     }
     
     ngOnDestroy() {

@@ -1,0 +1,7 @@
+.buttonContainer {
+    padding-top: 5px;
+}
+
+textarea:disabled {
+    border-width: 0px;
+}

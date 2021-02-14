@@ -8,7 +8,8 @@
     <label for="comment">Comment:</label>
     <textarea type="text" 
         id="comment" 
-        cols="75" rows="10"
+        cols="50" 
+        rows="5"
         formControlName="comment"
         [ngClass]="{'input-invalid': comment.invalid && (comment.dirty || comment.touched)}"></textarea>
     <div class="error"

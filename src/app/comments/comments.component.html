@@ -1,6 +1,6 @@
 <div class="comment-container">
     <h2>Comments ({{comments.length}}):</h2>
-    <div id="comment" *ngFor="let comment of comments">
+    <div class="comment" *ngFor="let comment of comments">
         <app-comment [comment]="comment" [user]="user" [enableEdit]="true"></app-comment>
     </div>
 
