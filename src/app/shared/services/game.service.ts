@@ -41,7 +41,7 @@ export class GameService {
     }
 
     editGame(gameFormData) {
-        this.dataService.addGame(gameFormData)
+        this.dataService.editGame(gameFormData)
             .subscribe((res: {status: number, description?: string, changedRows?: number}) => {
                 this.syncWithDb();
             });

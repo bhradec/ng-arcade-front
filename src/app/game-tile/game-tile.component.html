@@ -6,7 +6,7 @@
     <a [routerLink]="['/gameAuthorProfile', game.gameAuthorId]" 
         id="gamesAuthorName">{{game.gameAuthorName}}</a>
     <div id="buttonContainer" *ngIf="editMode">
-        <button class="buttonYellow" routerLink="/editGame">
+        <button class="buttonYellow" [routerLink]="['/editGame', game.id]">
             <img src="../../assets/icons/edit.svg" 
                 alt="Edit" 
                 title="Edit">

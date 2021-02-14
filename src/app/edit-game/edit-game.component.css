@@ -13,13 +13,13 @@ form {
     display: flex;
     flex-direction: column;
     background-color: white;
-    min-width: 500px;
+    max-width: 500px;
     padding: 30px;
     border-radius: 10px;
-    margin-top: 25px;
+    margin-top: 40px;
     box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
     box-sizing: border-box;
-    margin-top: 140px;
+    margin-bottom: 55px;
 }
 
 @media (max-width: 500px) {
