@@ -1,16 +1,19 @@
-<div id="addGameAuthorContainer">
-    <form [formGroup]="addGameAuthorForm" (submit)="onSubmit()">
+<div id="addGameAuthorFormContainer">
+    <form [formGroup]="addGameAuthorForm" 
+        (submit)="onSubmit()"
+        id="addGameAuthorForm">
+
         <h2>Add game author</h2>
 
-        <label for="name">Name:</label>
+        <label for="nameInput">Name:</label>
         <input type="text" 
-            name="name"
+            name="nameInput"
             placeholder="Name"  
-            id="name"
-            formControlName="name"
-            [ngClass]="{'inputInvalid': isInputInvalid(name)}">
+            id="nameInput"
+            formControlName="nameInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(nameInput)}">
         <span class="errorText" 
-            *ngIf="isInputInvalid(name)">
+            *ngIf="isInputInvalid(nameInput)">
             Name not entered.</span>
 
         <div id="buttonContainer">

@@ -20,24 +20,24 @@ export class AddGameAuthorComponent implements OnInit {
 
     ngOnInit() {
         this.addGameAuthorForm = this.formBuilder.group({
-            name: new FormControl('', Validators.required)
+            nameInput: new FormControl("", Validators.required)
         });
     }
 
-    get name() {
-        return this.addGameAuthorForm.get('name');
+    get nameInput() {
+        return this.addGameAuthorForm.get("nameInput");
     }
-    
+
     isInputInvalid(input) {
         return input.invalid && (input.dirty || input.touched);
     }
 
     onSubmit() {
         if (this.addGameAuthorForm.invalid) {
-            this.addGameAuthorErrorMessage = 'Plesase enter all required data.';            
+            this.addGameAuthorErrorMessage = "Plesase enter all required data.";
         } else {
             let newGameAuthor = new GameAuthor();
-            newGameAuthor.name = this.name.value;
+            newGameAuthor.name = this.nameInput.value;
             this.gameAuthorService.addGameAuthor(newGameAuthor);
             this.router.navigate(["/manageGameAuthors"]);
         }

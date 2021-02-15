@@ -1,41 +1,23 @@
-#addGameAuthorContainer {
+#addGameAuthorFormContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 0px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    max-width: 500px;
-    padding: 30px;
-    border-radius: 10px;
-    margin-top: 40px;
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-    box-sizing: border-box;
+    margin-top: 55px;
     margin-bottom: 55px;
 }
 
-@media (max-width: 500px) {
-    form {
-        min-width: 100%;
-        margin-top: 20px;
-    }
+#addGameAuthorFormContainer h2 {
+    text-align: center;
 }
 
-label {
-    margin-top: 15px;
-}
-
-input, textarea {
-    margin-top: 5px;
-    margin-bottom: 5px;
+#addGameAuthorForm {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    box-sizing: border-box;
 }
 
 #buttonContainer {
@@ -46,5 +28,5 @@ input, textarea {
 
 #addGameAuthorErrorMessage {
     text-align: center;
-    margin-top: 35px;
+    margin-top: 30px;
 }
