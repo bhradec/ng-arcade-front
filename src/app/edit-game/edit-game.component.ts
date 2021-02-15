@@ -18,7 +18,7 @@ export class EditGameComponent implements OnInit {
     gameAuthorsChangeSubject: BehaviorSubject<GameAuthor[]>;
     gameAuthorsChangeSubscription: Subscription;
     gameAuthors: GameAuthor[] = [];
-    gameImage: any;
+    image: any;
     game: Game;
 
     constructor(
@@ -33,12 +33,12 @@ export class EditGameComponent implements OnInit {
         let id = Number(routeParams.get("id"));
 
         this.editGameForm = this.formBuilder.group({
-            name: new FormControl("", Validators.required),
-            link: new FormControl("", Validators.required),
-            sourceLink: new FormControl("", Validators.required),
-            image: new FormControl(""),
-            description: new FormControl("", Validators.required),
-            gameAuthorId: new FormControl("", Validators.required)
+            nameInput: new FormControl("", Validators.required),
+            linkInput: new FormControl("", Validators.required),
+            sourceLinkInput: new FormControl("", Validators.required),
+            imageInput: new FormControl(""),
+            descriptionInput: new FormControl("", Validators.required),
+            gameAuthorIdInput: new FormControl("", Validators.required)
         });
 
         this.gameAuthorsChangeSubject = this.gameAuthorService.getGameAuthors();
@@ -54,37 +54,37 @@ export class EditGameComponent implements OnInit {
                 })
                 
                 if (this.game) {
-                    this.name.setValue(this.game.name);
-                    this.link.setValue(this.game.link);
-                    this.sourceLink.setValue(this.game.sourceLink);
-                    this.description.setValue(this.game.description);
-                    this.gameAuthorId.setValue(this.game.gameAuthorId);
+                    this.nameInput.setValue(this.game.name);
+                    this.linkInput.setValue(this.game.link);
+                    this.sourceLinkInput.setValue(this.game.sourceLink);
+                    this.descriptionInput.setValue(this.game.description);
+                    this.gameAuthorIdInput.setValue(this.game.gameAuthorId);
                 }
             });
     }
 
-    get name() {
-        return this.editGameForm.get('name');
-    }
-    
-    get link() {
-        return this.editGameForm.get('link');
+    get nameInput() {
+        return this.editGameForm.get("nameInput");
     }
 
-    get sourceLink() {
-        return this.editGameForm.get('sourceLink');
+    get linkInput() {
+        return this.editGameForm.get("linkInput");
     }
 
-    get image() {
-        return this.editGameForm.get('image');
+    get sourceLinkInput() {
+        return this.editGameForm.get("sourceLinkInput");
     }
 
-    get description() {
-        return this.editGameForm.get('description');
+    get imageInput() {
+        return this.editGameForm.get("imageInput");
     }
 
-    get gameAuthorId() {
-        return this.editGameForm.get('gameAuthorId');
+    get descriptionInput() {
+        return this.editGameForm.get("descriptionInput");
+    }
+
+    get gameAuthorIdInput() {
+        return this.editGameForm.get("gameAuthorIdInput");
     }
 
     isInputInvalid(input) {
@@ -93,7 +93,7 @@ export class EditGameComponent implements OnInit {
 
     onFileChange(event) {
         if (event.target.files.length > 0) {
-            this.gameImage = event.target.files[0];
+            this.image = event.target.files[0];
         }
     }
 
@@ -104,14 +104,14 @@ export class EditGameComponent implements OnInit {
             let formData = new FormData();
 
             formData.append("id", `${this.game.id}`);
-            formData.append("name", this.name.value);
-            formData.append("link", this.link.value);
-            formData.append("sourceLink", this.sourceLink.value);
-            formData.append("description", this.description.value);
-            formData.append("gameAuthorId", this.gameAuthorId.value);
+            formData.append("name", this.nameInput.value);
+            formData.append("link", this.linkInput.value);
+            formData.append("sourceLink", this.sourceLinkInput.value);
+            formData.append("description", this.descriptionInput.value);
+            formData.append("gameAuthorId", this.gameAuthorIdInput.value);
 
-            if (this.gameImage) { 
-                formData.append("image", this.gameImage); 
+            if (this.image) { 
+                formData.append("image", this.image);
             }
             
             this.gameService.editGame(formData);

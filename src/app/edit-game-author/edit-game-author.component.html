@@ -1,1 +1,35 @@
-<p>edit-game-author works!</p>
+<div id="editGameAuthorFormContainer">
+    <form [formGroup]="editGameAuthorForm" 
+        (submit)="onSubmit()"
+        id="editGameAuthorForm">
+
+        <h2>Edit game author</h2>
+
+        <label for="nameInput">Name:</label>
+        <input type="text" 
+            name="nameInput"
+            placeholder="Name"  
+            id="nameInput"
+            formControlName="nameInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(nameInput)}">
+        <span class="errorText" 
+            *ngIf="isInputInvalid(nameInput)">
+            Name not entered.</span>
+
+        <div id="buttonContainer">
+            <button type="submit" 
+                class="buttonBlue" 
+                (click)="onSubmit()">
+                Edit game author</button>
+            <button type="button" 
+                class="buttonRed" 
+                routerLink="/manageGameAuthors">
+                Cancel</button>
+        </div>
+
+        <span class="errorText"
+            id="editGameAuthorErrorMessage" 
+            *ngIf="editGameAuthorErrorMessage">
+            {{editGameAuthorErrorMessage}}</span>
+    </form>
+</div>

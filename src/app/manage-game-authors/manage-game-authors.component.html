@@ -24,7 +24,7 @@
                 <td>{{gameAuthor.name}}</td>
                 <td class="buttonContainer">
                     <button class="buttonYellow" 
-                        routerLink="/editGameAuthor">
+                        [routerLink]="['/editGameAuthor', gameAuthor.id]">
                         <img src="../../assets/icons/edit.svg" 
                             alt="Edit" 
                             title="Edit">
