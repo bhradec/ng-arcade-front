@@ -1,8 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { Comment } from '../shared/models/comment.model';
-import { Game } from '../shared/models/game.model';
 import { User } from '../shared/models/user.model';
 import { AuthService } from '../shared/services/auth.service';
 import { CommentService } from '../shared/services/comment.service';
@@ -14,7 +13,7 @@ import { CommentService } from '../shared/services/comment.service';
 })
 export class CommentsComponent implements OnInit {
     @Input() gameId: number;
-    
+
     isUserAuthenticated: boolean = false;
     displayNewCommentComponent: boolean = false;
     authChangeSubscription: Subscription;

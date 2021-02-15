@@ -1,7 +1,7 @@
 <form [formGroup]="editCommentForm" 
     (submit)="onSubmit()"
     id="editCommentForm">
-
+    
     <p>By <strong>{{comment.username}}</strong> on {{comment.timestamp | date:"short"}}</p>
     
     <textarea id="commentInput" 

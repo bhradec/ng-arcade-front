@@ -1,12 +1,12 @@
-.comment-container {
+#comment-container {
     margin-bottom: 55px;
 }
 
-.comment-container h2 {
+#comment-container h2 {
     margin-bottom: 40px;
 }
 
-.buttonContainer {
+#buttonContainer {
     margin-top: 15px;
 }
 
