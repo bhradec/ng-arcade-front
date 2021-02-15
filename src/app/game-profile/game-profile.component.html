@@ -1,21 +1,28 @@
-<div class="container">
+<div class="container"
+    id="gameProfileContainer">
+
     <span class="errorText" 
-    id="errorSpan"
-    *ngIf="errorMessage">
-    {{errorMessage}}</span>
-    <div id="gameData" *ngIf="game">
-        <img [src]="game.imagePath" alt="gameImage" id="gameImage">
+        id="errorSpan"
+        *ngIf="errorMessage">
+        {{errorMessage}}</span>
+
+    <div id="gameData" 
+        *ngIf="game">
+
+        <img [src]="game.imagePath"
+            alt="gameImage" 
+            id="gameImage">
         <h1 id="gameName">{{game.name}}</h1>
-        
         <h2 id="gameAuthorName">
-            by <a [routerLink]="['/gameAuthorProfile', game.gameAuthorId]">
+            <span>by</span>
+            <a [routerLink]="['/gameAuthorProfile', game.gameAuthorId]">
                 {{game.gameAuthorName}}</a>
         </h2>
-
         <p id="gameDescription">{{game.description}}</p>
-        
         <a [href]="game.link">
-            <button class="buttonGreen" (click)="logGamePlayedByUser()">Play</button>
+            <button class="buttonGreen" 
+                (click)="logGamePlayedByUser()">
+                Play</button>
         </a>
         <a [href]="game.sourceLink">
             <button class="buttonYellow">View source</button>

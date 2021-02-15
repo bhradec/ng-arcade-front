@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { Game } from '../shared/models/game.model';
 import { User } from '../shared/models/user.model';
@@ -26,7 +26,8 @@ export class GameProfileComponent implements OnInit {
         private activatedRoute: ActivatedRoute,
         private gameService: GameService,
         private authService: AuthService,
-        private gamesUsersService: GamesUsersService,) { }
+        private gamesUsersService: GamesUsersService,
+        private router: Router) { }
 
     ngOnInit() {
         let routeParams = this.activatedRoute.snapshot.paramMap;
@@ -40,6 +41,8 @@ export class GameProfileComponent implements OnInit {
                 this.isUserAuthenticated = res;
                 if (this.isUserAuthenticated) {
                     this.user = this.authService.getUser();
+                } else {
+                    this.router.navigate(["/login"]);
                 }
             });
         
