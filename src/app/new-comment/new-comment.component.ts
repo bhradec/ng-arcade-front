@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Comment } from '../shared/models/comment.model';
-import { Game } from '../shared/models/game.model';
 import { User } from '../shared/models/user.model';
 import { CommentService } from '../shared/services/comment.service';
 
@@ -33,11 +32,13 @@ export class NewCommentComponent implements OnInit {
 
     onSubmit(): void {
         this.newComment = new Comment();
+
         this.newComment.comment = this.comment.value;
         this.newComment.timestamp = new Date();
         this.newComment.userId = this.user.id;
         this.newComment.gameId = this.gameId;
         this.newComment.username = this.user.username;
+        
         this.commentService.addComment(this.newComment);
     }
 }

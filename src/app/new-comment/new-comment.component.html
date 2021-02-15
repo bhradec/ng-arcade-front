@@ -1,4 +1,7 @@
-<form [formGroup]="newCommentForm" (submit)="onSubmit()">
+<form [formGroup]="newCommentForm" 
+    (submit)="onSubmit()"
+    id="newCommentForm">
+
     <label for="username">Username:</label>
     <input type="text" 
         id="username" 
