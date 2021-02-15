@@ -1,11 +1,12 @@
-.container {
+#gameLibraryContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 55px;
+    margin-bottom: 55px;
 }
 
-app-game-tile {
+#gameTile {
     box-sizing: border-box;
     width: 25%;
     padding-top: 10px;
@@ -15,19 +16,23 @@ app-game-tile {
     transition: transform .2s;
 }
 
-@media (max-width: 769px) {
-    app-game-tile {
+@media (max-width: 768px) {
+    /* Na manjim ekranima jedan game tile zauzima 50%
+    širine retka kako bi u jednom retku bila po 2 game tilea. */
+    #gameTile {
         width: 50%;
     }
 }
 
-@media (max-width: 575px) {
-    app-game-tile {
+@media (max-width: 576px) {
+    /* Na vrlo malim ekranima jedan game tile zauzima 100%
+    širine retka kako bi u jednom retku bio po 1 game tile. */
+    #gameTile {
         width: 100%;
     }
 }
 
-app-game-tile:hover {
+#gameTile:hover {
     transform: scale(1.04);
 }
 
