@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GameAuthor } from '../shared/models/game-author.model';
 import { GameAuthorService } from '../shared/services/game-author.service';
@@ -29,17 +29,15 @@ export class EditGameAuthorComponent implements OnInit {
         });
 
         this.gameAuthorService.getGameAuthors()
-        .subscribe((res: GameAuthor[]) => {
-            this.gameAuthor = res.find((gameAuthor) => {
-                return gameAuthor.id == id;
-            })
-            
-            if (this.gameAuthor) {
-                this.nameInput.setValue(this.gameAuthor.name);
-            }
-        });
+            .subscribe((res: GameAuthor[]) => {
+                this.gameAuthor = res.find((gameAuthor) => {
+                    return gameAuthor.id == id;
+                })
 
-
+                if (this.gameAuthor) {
+                    this.nameInput.setValue(this.gameAuthor.name);
+                }
+            });
     }
 
     get nameInput() {
