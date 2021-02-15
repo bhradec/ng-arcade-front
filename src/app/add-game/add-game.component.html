@@ -1,77 +1,80 @@
-<div id="addGameContainer">
-    <form [formGroup]="addGameForm" (submit)="onSubmit()">
+<div id="addGameFormContainer">
+    <form [formGroup]="addGameForm" 
+        (submit)="onSubmit()"
+        id="addGameForm">
+
         <h2>Add new game</h2>
 
-        <label for="name">Name:</label>
+        <label for="nameInput">Name:</label>
         <input type="text" 
-            name="name"
+            name="nameInput"
             placeholder="Name"  
-            id="name"
-            formControlName="name"
-            [ngClass]="{'inputInvalid': isInputInvalid(name)}">
+            id="nameInput"
+            formControlName="nameInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(nameInput)}">
         <span class="errorText" 
-            *ngIf="isInputInvalid(name)">
+            *ngIf="isInputInvalid(nameInput)">
             Game name not entered.</span>
 
-        <label for="link">Link:</label>
+        <label for="linkInput">Link:</label>
         <input type="url" 
-            name="link"
+            name="linkInput"
             placeholder="www.playablegame.com"
-            id="link"
-            formControlName="link"
-            [ngClass]="{'inputInvalid': isInputInvalid(link)}">
+            id="linkInput"
+            formControlName="linkInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(linkInput)}">
         <span class="descriptionText">
             Link to a playable instance of a game.</span> 
         <span class="errorText" 
-            *ngIf="isInputInvalid(link)">
+            *ngIf="isInputInvalid(linkInput)">
             Link not entered.</span>
 
-        <label for="sourceLink">Source link:</label>
+        <label for="sourceLinkInput">Source link:</label>
         <input type="url" 
-            name="sourceLink"
+            name="sourceLinkInput"
             placeholder="www.gamesource.com"
-            id="sourceLink"
-            formControlName="sourceLink"
-            [ngClass]="{'inputInvalid': isInputInvalid(sourceLink)}">
+            id="sourceLinkInput"
+            formControlName="sourceLinkInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(sourceLinkInput)}">
         <span class="descriptionText">
             Link to a repository containing game source code.</span> 
         <span class="errorText" 
-            *ngIf="isInputInvalid(sourceLink)">
+            *ngIf="isInputInvalid(sourceLinkInput)">
             Source link not entered.</span>
 
-        <label for="image">Image:</label>
+        <label for="imageInput">Image:</label>
         <input type="file" 
-            name="image"
-            id="image"
-            formControlName="image"
+            name="imageInput"
+            id="imageInput"
+            formControlName="imageInput"
             (change)="onFileChange($event)"
-            [ngClass]="{'inputInvalid': isInputInvalid(image)}">
+            [ngClass]="{'inputInvalid': isInputInvalid(imageInput)}">
         <span class="errorText" 
-            *ngIf="isInputInvalid(image)">
+            *ngIf="isInputInvalid(imageInput)">
             Game image not selected.</span>
 
-        <label for="description">Description:</label>
-        <textarea name="description" 
-            id="description" 
+        <label for="descriptionInput">Description:</label>
+        <textarea name="descriptionInput" 
+            id="descriptionInput" 
             cols="30"
-            rows="10"
-            formControlName="description"
-            [ngClass]="{'inputInvalid': isInputInvalid(description)}">Description</textarea>
+            rows="5"
+            formControlName="descriptionInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(descriptionInput)}">Description</textarea>
         <span class="errorText" 
-            *ngIf="isInputInvalid(description)">
+            *ngIf="isInputInvalid(descriptionInput)">
             Description not entered.</span>
 
-        <label for="gameAuthorId">Game author:</label>
-        <select name="gameAuthorId" 
-            id="gameAuthorId"
-            formControlName="gameAuthorId">
+        <label for="gameAuthorIdInput">Game author:</label>
+        <select name="gameAuthorIdInput" 
+            id="gameAuthorIdInput"
+            formControlName="gameAuthorIdInput">
             <option *ngFor="let gameAuthor of gameAuthors" 
                 [value]="gameAuthor.id">{{gameAuthor.name}}</option>
         </select>
         <span class="descriptionText">
             If game author is not available, add new game author on the administration page.</span> 
         <span class="errorText" 
-            *ngIf="isInputInvalid(gameAuthorId)">
+            *ngIf="isInputInvalid(gameAuthorIdInput)">
             Game author not selected.</span>
 
         <div id="buttonContainer">

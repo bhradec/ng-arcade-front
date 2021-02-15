@@ -135,3 +135,14 @@ a:visited {
 a:hover {
     color: var(--purple);
 }
+
+/* Forme */
+
+label {
+    margin-top: 15px;
+}
+
+input, textarea {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
