@@ -1,12 +1,19 @@
-<div class="container" id="gameLibraryContainer">
-    <span class="errorText" 
-        id="errorSpan"
-        *ngIf="games.length == 0">
-        No games to show.</span>
-    <ng-container *ngFor="let game of games">
-        <app-game-tile 
-            [game]="game" 
-            [editMode]="false"
-            id="gameTile"></app-game-tile>
-    </ng-container>
+<div class="container" 
+    id="gameLibraryContainer">
+    <h1>Game Library</h1>
+
+    <div id="games">
+        <span class="errorText" 
+            id="errorSpan"
+            *ngIf="games.length == 0">
+            No games to show.</span>
+        <div id="gamesContainer">
+            <ng-container *ngFor="let game of games">
+                <app-game-tile 
+                    [game]="game" 
+                    [editMode]="false"
+                    id="gameTile"></app-game-tile>
+            </ng-container>
+        </div>
+    </div>
 </div>
