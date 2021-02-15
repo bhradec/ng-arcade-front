@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs';
 import { User } from '../shared/models/user.model';
 import { AuthService } from '../shared/services/auth.service';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-import { Breakpoints } from "../shared/enums/breakpoints";
 
 @Component({
     selector: 'app-home',
@@ -14,8 +13,7 @@ import { Breakpoints } from "../shared/enums/breakpoints";
 export class HomeComponent implements OnInit {
     isUserAuthenticated: boolean = false;
     authChangeSubscription: Subscription;
-    isMobile: boolean;
-    displayMainNavigation: boolean;
+    displayMainNavigation: boolean = true;
     user: User;
 
     constructor(
@@ -37,14 +35,12 @@ export class HomeComponent implements OnInit {
         }
 
         this.breakpointObserver
-            .observe([`(min-width: ${Breakpoints.MEDIUM + 1}px)`])
+            .observe([`(max-width: 768px)`])
             .subscribe((breakpointState: BreakpointState) => {
                 if (breakpointState.matches) {
-                    this.displayMainNavigation = true;
-                    this.isMobile = false;
-                } else {
                     this.displayMainNavigation = false;
-                    this.isMobile = true;
+                } else {
+                    this.displayMainNavigation = true;
                 }
             });
     }

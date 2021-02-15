@@ -1,0 +1,31 @@
+#content {
+    /* Na velikim ekranima na lijevoj strani se nalazi
+    vertikalna navigacija široka 300px pa je sadržaj stranice
+    potrebno pomaknuti 300px u desno. */
+    margin-left: 300px;
+}
+
+#secondaryNavigation {
+    /* Sekundarna navigacija nalazi se na vrhu stranice i sadrži 
+    gumb za prikaz glavne navigacije. Ona se ne prikazuje na 
+    većim ekranima. */
+    display: none;
+}
+
+@media(max-width: 768px) {
+    #secondaryNavigation {
+        /* Sekundarna navigacija se prikazuje na manjim ekranima. */
+        display: initial;
+    }
+}
+
+@media(max-width: 768px) {
+    /* Na manjim ekranima vertikalna navigacija koja se nalazi
+    s lijeve strane se sakriva, te se pokazuje klikom na gumb.
+    Iz tog razloga na manjim ekranima nije potreno pomicati 
+    sadržaj stranice u desno kako bi se napravilo mjesta za 
+    vertiklanu navigaciju.*/
+    #content {
+        margin-left: 0px;
+    }
+}

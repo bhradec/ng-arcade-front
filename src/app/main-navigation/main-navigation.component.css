@@ -1,4 +1,4 @@
-nav {
+#main-navigation {
     position: fixed;
     top: 0px;
     bottom: 0px;
@@ -14,21 +14,21 @@ nav {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-app-logo {
+#logo {
     align-self: center;
     width: 250px;
 }
 
-nav ul {
+#main-navigation ul {
     list-style-type: none;
 }
 
-nav ul li {
+#main-navigation ul li {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-nav ul li {
+#main-navigation ul li {
     text-decoration: none;
 }
 
