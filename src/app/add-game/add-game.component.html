@@ -80,14 +80,17 @@
         <div id="buttonContainer">
             <button type="submit" 
                 class="buttonBlue" 
-                (click)="onSubmit()">Add game</button>
+                (click)="onSubmit()">
+                Add game</button>
             <button type="button" 
                 class="buttonRed" 
-                routerLink="/manageGames">Cancel</button>
+                routerLink="/manageGames">
+                Cancel</button>
         </div>
 
         <span class="errorText"
             id="addGameErrorMessage" 
-            *ngIf="addGameErrorMessage">{{addGameErrorMessage}}</span>
+            *ngIf="addGameErrorMessage">
+            {{addGameErrorMessage}}</span>
     </form>
 </div>

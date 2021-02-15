@@ -19,14 +19,17 @@
         <div id="buttonContainer">
             <button type="submit" 
                 class="buttonBlue" 
-                (click)="onSubmit()">Add game author</button>
+                (click)="onSubmit()">
+                Add game author</button>
             <button type="button" 
                 class="buttonRed" 
-                routerLink="/manageGameAuthors">Cancel</button>
+                routerLink="/manageGameAuthors">
+                Cancel</button>
         </div>
 
         <span class="errorText"
             id="addGameAuthorErrorMessage" 
-            *ngIf="addGameAuthorErrorMessage">{{addGameAuthorErrorMessage}}</span>
+            *ngIf="addGameAuthorErrorMessage">
+            {{addGameAuthorErrorMessage}}</span>
     </form>
 </div>

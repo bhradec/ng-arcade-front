@@ -2,6 +2,6 @@
     padding-top: 5px;
 }
 
-textarea:disabled {
+#editCommentForm textarea:disabled {
     border-width: 0px;
 }

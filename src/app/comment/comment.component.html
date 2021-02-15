@@ -1,11 +1,16 @@
-<form [formGroup]="editCommentForm" (submit)="onSubmit()">
+<form [formGroup]="editCommentForm" 
+    (submit)="onSubmit()"
+    id="editCommentForm">
+
     <p>By <strong>{{comment.username}}</strong> on {{comment.timestamp | date:"short"}}</p>
+    
     <textarea id="commentInput" 
         cols="50" 
         rows="4"
         formControlName="commentInput"
         [ngClass]="{'input-invalid': isInputInvalid(commentInput)}"></textarea>
-    <div class="buttonContainer" *ngIf="comment.userId==user.id && editMode==false && enableEdit">
+    <div class="buttonContainer" 
+        *ngIf="comment.userId==user.id && editMode==false && enableEdit">
         <button type="button" 
             class="buttonRed"
             title="Delete"
@@ -13,12 +18,16 @@
         <button type="button" 
             class="buttonYellow"
             title="Edit"
-            (click)="editComment()">Edit</button>
+            (click)="editComment()">
+            Edit</button>
     </div>
-    <div class="buttonContainer" *ngIf="comment.userId==user.id && editMode==true">
+    <div class="buttonContainer" 
+        *ngIf="comment.userId==user.id && editMode==true">
         <button type="button" 
             class="buttonRed" 
-            (click)="cancelEditComment()">Cancel</button>
-        <button type="submit" class="buttonYellow">Finish editing</button>
+            (click)="cancelEditComment()">
+            Cancel</button>
+        <button type="submit" class="buttonYellow">
+            Finish editing</button>
     </div>
 </form>

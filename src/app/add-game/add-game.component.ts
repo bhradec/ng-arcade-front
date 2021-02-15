@@ -81,12 +81,14 @@ export class AddGameComponent implements OnInit {
             this.addGameErrorMessage = "Plesase enter all required data.";
         } else {
             let formData = new FormData();
+
             formData.append("name", this.nameInput.value);
             formData.append("link", this.linkInput.value);
             formData.append("sourceLink", this.sourceLinkInput.value);
             formData.append("image", this.image);
             formData.append("description", this.descriptionInput.value);
             formData.append("gameAuthorId", this.gameAuthorIdInput.value);
+            
             this.gameService.addGame(formData);
             this.router.navigate(["/manageGames"]);
         }

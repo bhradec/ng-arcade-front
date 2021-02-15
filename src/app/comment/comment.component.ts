@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Comment } from '../shared/models/comment.model';
 import { User } from '../shared/models/user.model';
 import { CommentService } from '../shared/services/comment.service';
@@ -30,7 +30,9 @@ export class CommentComponent implements OnInit {
         });
     }
 
-    get commentInput() { return this.editCommentForm.get("commentInput"); }
+    get commentInput() { 
+        return this.editCommentForm.get("commentInput"); 
+    }
 
     isInputInvalid(input) {
         return input.invalid && (input.dirty || input.touched);
@@ -52,12 +54,15 @@ export class CommentComponent implements OnInit {
     }
 
     onSubmit() {
+        let editedComment = new Comment();
+
         this.commentInput.disable()
         this.editMode = false;
-        let editedComment = new Comment();
+
         editedComment = this.comment;
         editedComment.comment = this.commentInput.value;
         editedComment.timestamp = new Date();
+
         this.commentService.editComment(editedComment);
     }
 }
