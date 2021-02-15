@@ -27,6 +27,7 @@ import { ManageGameAuthorsComponent } from './manage-game-authors/manage-game-au
 import { CommentsComponent } from './comments/comments.component';
 import { NewCommentComponent } from './new-comment/new-comment.component';
 import { CommentComponent } from './comment/comment.component';
+import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 
 @NgModule({
     declarations: [
@@ -51,7 +52,8 @@ import { CommentComponent } from './comment/comment.component';
         ManageGameAuthorsComponent,
         CommentsComponent,
         NewCommentComponent,
-        CommentComponent
+        CommentComponent,
+        RouteNotFoundComponent
     ],
     imports: [
         BrowserModule,

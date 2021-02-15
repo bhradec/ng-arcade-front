@@ -1,0 +1,10 @@
+#routeNotFoundContainer {
+    margin-top: 55px;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+#routeNotFoundContainer h1,
+#routeNotFoundContainer h2 {
+    color: var(--grey);
+}

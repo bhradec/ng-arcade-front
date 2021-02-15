@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { ManageGameAuthorsComponent } from './manage-game-authors/manage-game-authors.component';
 import { ManageGamesComponent } from './manage-games/manage-games.component';
 import { RegisterComponent } from './register/register.component';
+import { RouteNotFoundComponent } from './route-not-found/route-not-found.component';
 import { AdminGuard } from './shared/other/admin-guard';
 import { AuthGuard } from './shared/other/auth-guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
@@ -43,6 +44,14 @@ const routes: Routes = [
             { path: "addGameAuthor", component: AddGameAuthorComponent, canActivate: [AuthGuard, AdminGuard] },
             { path: "editGameAuthor/:id", component: EditGameAuthorComponent, canActivate: [AuthGuard, AdminGuard] }
         ]
+    },
+    {
+        path: "routeNotFound", 
+        component: RouteNotFoundComponent
+    },
+    {
+        path: "**", 
+        redirectTo: "/routeNotFound"
     }
 ];
 
