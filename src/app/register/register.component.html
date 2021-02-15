@@ -1,66 +1,72 @@
-<div id="registerContainer">
-    <app-logo></app-logo>
+<div id="registerFormContainer">
+    <app-logo id="logo"></app-logo>
 
-    <form [formGroup]="registerForm" (submit)="onSubmit()">
+    <form [formGroup]="registerForm" 
+        (submit)="onSubmit()"
+        id="registerForm">
+
         <h2>Register</h2>
 
-        <label for="username">Username:</label>
+        <label for="usernameInput">Username:</label>
         <input type="text" 
-            name="username"
+            name="usernameInput"
             placeholder="Username"
-            id="username"
-            formControlName="username"
-            [ngClass]="{'inputInvalid': isInputInvalid(username)}">
+            id="usernameInput"
+            formControlName="usernameInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(usernameInput)}">
 
         <span class="errorText"
-            *ngIf="isInputInvalid(username)">
+            *ngIf="isInputInvalid(usernameInput)">
             Username shorter than 4 characters.</span>
 
-        <label for="password">Password:</label>
+        <label for="passwordInput">Password:</label>
         <input type="password"
-            name="password" 
+            name="passwordInput" 
             placeholder="Password" 
-            id="password"
-            formControlName="password"
-            [ngClass]="{'inputInvalid': isInputInvalid(password)}">
+            id="passwordInput"
+            formControlName="passwordInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(passwordInput)}">
 
         <span class="errorText"
-            *ngIf="isInputInvalid(password)">
+            *ngIf="isInputInvalid(passwordInput)">
             Password not entered.</span>
 
-        <label for="repeatPassword">Repeat password:</label>
+        <label for="repeatPasswordInput">Repeat password:</label>
         <input type="password" 
-            name="repeatPassword"
+            name="repeatPasswordInput"
             placeholder="Repeat password"
-            id="repeatPassword" 
-            formControlName="repeatPassword"
-            [ngClass]="{'inputInvalid': isInputInvalid(repeatPassword) || !passwordsMatch()}">
+            id="repeatPasswordInput" 
+            formControlName="repeatPasswordInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(repeatPasswordInput) || !passwordsMatch()}">
         
         <span class="errorText"
-            *ngIf="isInputInvalid(repeatPassword) || !passwordsMatch()">
+            *ngIf="isInputInvalid(repeatPasswordInput) || !passwordsMatch()">
             Passwords do not match.</span>
 
-        <label for="email">Email:</label>
-        <input type="email" 
-            name="email"    
+        <label for="emailInput">Email:</label>
+        <input type="emailInput" 
+            name="emailInput"    
             placeholder="email@mail.com"
-            id="email" 
-            formControlName="email"
-            [ngClass]="{'inputInvalid': isInputInvalid(email)}">
+            id="emailInput" 
+            formControlName="emailInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(emailInput)}">
 
         <span class="error"
-            *ngIf="isInputInvalid(email)">
+            *ngIf="isInputInvalid(emailInput)">
             Email not valid.</span>
 
         <div id="buttonContainer">
             <button type="submit" 
-                class="buttonGreen">Register</button>
+                class="buttonGreen">
+                Register</button>
             <button routerLink="/login" 
-                class="buttonYellow">Back to login</button>
+                class="buttonYellow">
+                Back to login</button>
         </div>
 
         <span class="errorText"
             id="registerErrorMessage" 
-            *ngIf="registerErrorMessage">{{registerErrorMessage}}</span>
+            *ngIf="registerErrorMessage">
+            {{registerErrorMessage}}</span>
     </form>
 </div>
