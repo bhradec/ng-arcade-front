@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { FormControl } from '@angular/forms';
-import { FormGroup } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../shared/services/auth.service';
 
@@ -22,8 +19,8 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
-            username: new FormControl("", Validators.required),
-            password: new FormControl("", Validators.required),
+            usernameInput: new FormControl("", Validators.required),
+            passwordInput: new FormControl("", Validators.required),
         });
 
         this.authErrorSubscription = this.authService.authErrorSubject
@@ -32,11 +29,11 @@ export class LoginComponent implements OnInit {
             });
     }
 
-    get username() {
-        return this.loginForm.get('username');
+    get usernameInput() {
+        return this.loginForm.get('usernameInput');
     }
-    get password() {
-        return this.loginForm.get('password');
+    get passwordInput() {
+        return this.loginForm.get('passwordInput');
     }
 
     isInputInvalid(input) {
@@ -48,8 +45,8 @@ export class LoginComponent implements OnInit {
             this.loginErrorMessage = 'Plesase enter all required data.';
         } else {
             this.authService.authenticateUser(
-                this.username.value,
-                this.password.value
+                this.usernameInput.value,
+                this.passwordInput.value
             );
         }
     }

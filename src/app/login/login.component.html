@@ -1,40 +1,51 @@
-<div id="loginContainer">
-    <app-logo></app-logo>
+<div class="container"
+    id="loginFormContainer">
+    
+    <app-logo id="logo"></app-logo>
 
-    <form [formGroup]="loginForm" (submit)="onSubmit()">
+    <form [formGroup]="loginForm" 
+        (submit)="onSubmit()"
+        id="loginForm">
+
         <h2>Login</h2>
 
-        <label for="username">Username:</label>
+        <label for="usernameInput">Username:</label>
         <input type="text" 
-            name="username"
+            name="usernameInput"
             placeholder="Username"  
-            id="username"
-            formControlName="username"
-            [ngClass]="{'inputInvalid': isInputInvalid(username)}">
+            id="usernameInput"
+            formControlName="usernameInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(usernameInput)}">
 
         <span class="errorText" 
-            *ngIf="isInputInvalid(username)">
+            *ngIf="isInputInvalid(usernameInput)">
             Username not entered.</span>
 
-        <label for="password">Password:</label>
+        <label for="passwordInput">Password:</label>
         <input type="password" 
-            name="password"
+            name="passwordInput"
             placeholder="Password"
-            id="password"
-            formControlName="password"
-            [ngClass]="{'inputInvalid': isInputInvalid(password)}">
+            id="passwordInput"
+            formControlName="passwordInput"
+            [ngClass]="{'inputInvalid': isInputInvalid(passwordInput)}">
 
         <span class="errorText" 
-            *ngIf="isInputInvalid(password)">
+            *ngIf="isInputInvalid(passwordInput)">
             Password not entered.</span>
 
         <div id="buttonContainer">
-            <button type="submit" class="buttonGreen">Login</button>
-            <button type="button" class="buttonYellow" routerLink="/register">Register</button>
+            <button type="submit" 
+                class="buttonGreen">
+                Login</button>
+            <button type="button" 
+                class="buttonYellow" 
+                routerLink="/register">
+                Register</button>
         </div>
 
         <span class="errorText"
             id="loginErrorMessage" 
-            *ngIf="loginErrorMessage">{{loginErrorMessage}}</span>
+            *ngIf="loginErrorMessage">
+            {{loginErrorMessage}}</span>
     </form>
 </div>
