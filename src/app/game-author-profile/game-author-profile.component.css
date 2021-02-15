@@ -1,0 +1,34 @@
+#gameAuthorProfileContainer {
+    margin-top: 55px;
+    margin-bottom: 55px;
+}
+
+#gameAuthorData {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gameAuthorProfileContainer h2 {
+    margin-top: 55px;
+}
+
+#gameAuthorDataTable {
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#gameAuthorDataTable th {
+    text-align: left;
+}
+
+#gameAuthorDataTable td {
+    padding: 10px;
+    border-color: var(--grey);
+    border-width: 1px;
+    border-style: solid;
+}
+
+#gameAuthorDataTable img {
+    max-width: 100px;
+}

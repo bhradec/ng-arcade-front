@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AddGameAuthorComponent } from './add-game-author/add-game-author.component';
 import { AddGameComponent } from './add-game/add-game.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { EditGameAuthorComponent } from './edit-game-author/edit-game-author.component';
 import { EditGameComponent } from './edit-game/edit-game.component';
+import { GameAuthorProfileComponent } from './game-author-profile/game-author-profile.component';
 import { GameLibraryComponent } from './game-library/game-library.component';
 import { GameProfileComponent } from './game-profile/game-profile.component';
 import { HomeComponent } from './home/home.component';
@@ -33,7 +34,7 @@ const routes: Routes = [
             { path: "", component: GameLibraryComponent, canActivate: [AuthGuard] },
             { path: "userProfile", component: UserProfileComponent, canActivate: [AuthGuard] },
             { path: "gameProfile/:id", component: GameProfileComponent, canActivate: [AuthGuard] },
-            { path: "gameAuthorProfile/:id", component: GameProfileComponent, canActivate: [AuthGuard] },
+            { path: "gameAuthorProfile/:id", component: GameAuthorProfileComponent, canActivate: [AuthGuard] },
             { path: "administration", component: AdministrationComponent, canActivate: [AuthGuard, AdminGuard] },
             { path: "manageGames", component: ManageGamesComponent, canActivate: [AuthGuard, AdminGuard] },
             { path: "manageGameAuthors", component: ManageGameAuthorsComponent, canActivate: [AuthGuard, AdminGuard] },

@@ -1,1 +1,31 @@
-<p>game-author-profile works!</p>
+<div class="container"
+    id="gameAuthorProfileContainer">
+
+    <span class="errorText" 
+        id="errorSpan"
+        *ngIf="errorMessage">
+        {{errorMessage}}</span>
+    
+    <div id="gameAuthorData"
+        *ngIf="gameAuthor">
+
+    <h1>{{gameAuthor.name}}</h1>
+    
+    <h2>Games by {{gameAuthor.name}}:</h2>
+        <table id="gameAuthorDataTable">
+            <tr>
+                <th colspan="2">Name</th>
+            </tr>
+            <tr *ngFor="let game of games">
+                <td>
+                    <a [routerLink]="['/gameProfile', game.id]">{{game.name}}</a>
+                </td>
+                <td>
+                    <a [routerLink]="['/gameProfile', game.id]">
+                        <img [src]="game.imagePath" alt="gameImage">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
